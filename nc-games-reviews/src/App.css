@@ -1,3 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto+Slab:wght@200&family=Unica+One&family=Yuji+Syuku&display=swap');
+
 .App {
+  margin: 0;
+  padding:0;
   text-align: center;
+  font-family: 'Roboto Slab', serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content min-content auto;
+  grid-template-areas:
+  "userCorner"
+  "title"
+  "nav"
+  "main";
+}
+
+.userCorner {
+  grid-area: userCorner;
+  background-color: #DD403A;
+  text-align: right;
+  color: white;
+  padding-right: 10px;
+}
+
+header {
+  grid-area: title;
+  background-image: url("https://image.shutterstock.com/image-vector/board-games-banners-all-ages-260nw-1399107068.jpg");
+  color: white;
+  padding: 10px;
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #B8B42D;
+}
+
+main {
+  grid-area: main;
+  background-color: #FFFCE8;
+  display: grid;
+  margin: 0;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content auto;
+  grid-template-areas:
+  "about"
+  "sortBy"
+  "display";
+}
+
+.about {
+  grid-area: about;
+  padding:10px;
+  background-color: #FFFCE8;
+}
+
+.sortBy {
+  grid-area: sortBy;
+  background-color: #3E363F;
+  color: white;
+}
+
+.display {
+  grid-area: display;
+  background-color: rgb(212, 235, 245);
+  overflow: scroll;
+  text-align: center;
+}
+
+.reviewCard {
+  border: solid rgb(157, 157, 211) 2px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 5fr 3fr;
+  grid-template-rows: 1fr 2fr 5fr 1fr;
+  grid-template-areas:
+  "postedBy"
+  "vote revTitle revImg"
+  "vote revBody revImg"
+  "vote comms revImg";
+}
+
+#postedBy {
+  grid-area: postedBy;
+  border: solid red 2px;
+}
+
+#vote {
+  grid-area: vote;
+  border: solid rgb(0, 132, 255) 2px;
+}
+
+#revTitle {
+  grid-area: revTitle;
+  border: solid rgb(60, 255, 0) 2px;
+}
+
+#revBody {
+  grid-area: revBody;
+  border: solid rgb(255, 238, 0) 2px;
+}
+
+#revImg {
+  grid-area: revImg;
+  border: solid rgb(255, 153, 0) 2px;
+  border-radius: 50%;
+}
+
+#comms {
+  grid-area: comms;
+  border: solid rgb(59, 38, 6) 2px;
 }

@@ -1,25 +1,30 @@
+import AddVotes from "./AddVotes";
+import { Link } from "react-router-dom";
 
 export default function ReviewCard({ review }) {
+
     return (
         <section className="reviewCard">
             <div id="postedBy">
-                <p>{review.owner}</p>
-                <p>{review.created_at}</p>
+                <p> Posted by:<Link to={`/users/${review.owner}`} className="userLink"> {review.owner} </Link> • 
+                {review.created_at}</p>
             </div>
             <div id="revTitle">
-                <p>{review.title}</p>
+            <Link to={`/reviews/${review.review_id}`} className="singleReview"><p>{review.title}</p></Link>
             </div>
             <div id="revBody">
                 <p>{review.review_body}</p>
             </div>
             <div id="revImg">
-                <p>image will go here</p>
+                <img src={review.review_img_url} alt={review.title} />
             </div>
+
             <div id="comms">
-                <p>{review.comment_count} comments</p>
+                <Link to={`/reviews/${review.review_id}`} className="singleReview"><img src="https://cdn-icons-png.flaticon.com/512/54/54761.png" alt="commentIcon"/>    {review.comment_count} comments</Link>
             </div>
+
             <div id="vote">
-                <p>{review.votes}</p>
+                <AddVotes votes={review.votes} reviewId={review.review_id} />
             </div>
         </section>
     )

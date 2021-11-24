@@ -1,4 +1,4 @@
-import { Link,  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getCategories } from "../utils/api";
 import { useEffect, useState } from "react";
 
@@ -20,10 +20,6 @@ export default function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/">
-        <h2>Home</h2>
-      </Link>
-
       <select className="categoriesOptions" onChange={handleSelect}>
         <option
           key="Category selector"
@@ -32,7 +28,7 @@ export default function Nav() {
           disabled
           selected
         >
-          Categories
+          Choose a category
         </option>
         {categories.map((category) => {
           return (
@@ -42,8 +38,6 @@ export default function Nav() {
           );
         })}
       </select>
-
-      <p>Users</p>
     </div>
   )
 }

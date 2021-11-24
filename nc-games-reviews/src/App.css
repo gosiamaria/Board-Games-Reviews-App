@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto+Slab:wght@200&family=Unica+One&family=Yuji+Syuku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab:wght@300&family=Secular+One&display=swap');
 
 .App {
   margin: 0;
   padding:0;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #0C1821;
   font-family: 'Roboto Slab', serif;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content min-content auto;
+  grid-template-rows: min-content min-content 100px auto;
   grid-template-areas:
   "userCorner"
   "title"
@@ -16,100 +19,430 @@
   "main";
 }
 
+.login {
+  grid-area: main;
+}
+.login select {
+    height: 50px;
+    max-width: 300px;
+    min-width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #ad9c3c;
+    border: none;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+}
+.login button {
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  height: 50px;
+  min-width: 100px;
+  padding:10px;
+  margin-left: 20px;
+}
+
+/* @media only screen and (min-width: 600px) {
+  .App {
+    grid-template-columns
+  }
+} */
 .userCorner {
   grid-area: userCorner;
-  background-color: #DD403A;
-  text-align: right;
+  background-color: #0C1821;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: space-around;
+  align-items: center;
   color: white;
   padding-right: 10px;
+  font-weight: bold;
+}
+.userLink {
+  color: rgb(228, 187, 3);
+  text-decoration: none;
+}
+.userLink:hover {
+  color: #CCC9DC;
+  text-decoration: none;
+}
+.userLink:active {
+  color: rgb(228, 187, 3);
+  text-decoration: none;
+}
+
+
+.userCorner img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+.userCorner button {
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding:10px;
+  margin-left: 10px;
 }
 
 header {
   grid-area: title;
-  background-image: url("https://image.shutterstock.com/image-vector/board-games-banners-all-ages-260nw-1399107068.jpg");
+  background-color: #0C1821;
   color: white;
   padding: 10px;
+  font-family: 'Fredoka One', cursive;
+  font-size: large;
+  font-weight: normal;
+}
+
+.title-link {
+  color: rgb(43, 95, 86);
+  text-decoration: none;
+}
+.title-link:hover {
+  color: #CCC9DC;
+  text-decoration: none;
+}
+.title-link:active {
+  color: rgb(43, 95, 86);
+  text-decoration: none;
 }
 
 .nav {
   grid-area: nav;
-  background-color: #B8B42D;
+  height: 80px;
+  padding: auto;
 }
+
+.nav select {
+  height: 60px;
+  min-width: 300px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #ad9c3c;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.nav select:hover {
+  background-color: rgb(184, 219, 216);
+}
+
 
 main {
   grid-area: main;
-  background-color: #FFFCE8;
   display: grid;
   margin: 0;
   grid-template-columns: 100%;
   grid-template-rows: min-content min-content auto;
   grid-template-areas:
+  "subTitle"
   "about"
   "sortBy"
   "display";
 }
 
+.subTitle {
+  grid-area: subTitle;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+}
+
 .about {
   grid-area: about;
-  padding:10px;
+  padding:20px;
   background-color: #FFFCE8;
+  max-width: 800px;
+  border-radius: 10px;
+  margin: auto;
 }
-
-.sortBy {
-  grid-area: sortBy;
-  background-color: #3E363F;
+#catName {
   color: white;
 }
-
+.sortBy {
+  grid-area: sortBy;
+}
+.sortBy select {
+  text-align: center;
+  padding:10px;
+  border-radius: 20px;
+  width: 100px;
+  border:none;
+  background-color: #a85b02;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.sortBy select:hover {
+  background-color: rgb(184, 219, 216);
+}
 .display {
   grid-area: display;
-  background-color: rgb(212, 235, 245);
-  overflow: scroll;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 30px;
 }
 
 .reviewCard {
-  border: solid rgb(157, 157, 211) 2px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #ffffff;
+  margin: 20px auto;
+  max-width: 800px;
+  max-height: 500px;
+  background-color: #4d5332;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  justify-items: start;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 30px hsl(27, 5%, 40%); */
   display: grid;
-  grid-template-columns: 1fr 5fr 3fr;
-  grid-template-rows: 1fr 2fr 5fr 1fr;
+  grid-template-columns: minmax(45px, 50px) minmax(500px, 550px) minmax(150px, 200px);
+  grid-template-rows: 50px 50px auto 50px;
   grid-template-areas:
-  "postedBy"
-  "vote revTitle revImg"
+  "postedBy postedBy postedBy"
+  "vote revTitle revTitle"
   "vote revBody revImg"
   "vote comms revImg";
 }
 
 #postedBy {
   grid-area: postedBy;
-  border: solid red 2px;
+  align-items: center;
+  text-align: start;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  max-width: 800px;
+  margin: 0;
+  padding-left: 15px;
 }
 
 #vote {
   grid-area: vote;
-  border: solid rgb(0, 132, 255) 2px;
+  background-color: #697240;
+  max-width: 50px;
+  color: #ffffff;
+}
+
+#vote button {
+  font-weight: bold;
+  border: none;
+  background-color: #697240;
+  padding-top: 10px;
+}
+
+#vote button img {
+  max-width: 30px;
 }
 
 #revTitle {
   grid-area: revTitle;
-  border: solid rgb(60, 255, 0) 2px;
+  font-size: large;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 5px;
+  color: #ffffff;
 }
+
+.singleReview {
+  color: rgb(114, 170, 161);
+  text-decoration: none;
+}
+.singleReview:hover  {
+  color: #CCC9DC;
+  text-decoration: none;
+}
+.singleReview:active  {
+  color: rgb(43, 95, 86);
+  text-decoration: none;
+}
+
 
 #revBody {
   grid-area: revBody;
-  border: solid rgb(255, 238, 0) 2px;
+  text-align: left;
+  padding: 10px;
+  overflow-y: scroll;
+  color: #ffffff;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2a797c; 
+}
+
+/* Handle on hover
+::-webkit-scrollbar-thumb:hover {
+  background: #a5a31d; 
+} */
 
 #revImg {
   grid-area: revImg;
-  border: solid rgb(255, 153, 0) 2px;
-  border-radius: 50%;
+  padding: 5px;
+}
+
+#revImg img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 100%;
 }
 
 #comms {
   grid-area: comms;
-  border: solid rgb(59, 38, 6) 2px;
+  align-items: center;
+  max-width: 500px;
+  text-align: left;
+  padding-left: 5px;
+  color: #ffffff;
+}
+
+#comms img {
+  height: 25px;
+}
+
+
+.form {
+  color: rgb(58, 146, 137);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#newComment {
+  background-color: #f8f7ee;
+  width: 800px;
+  height: 150px;
+  justify-content: flex-start;
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+.form button {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #ad9c3c;
+  border: none;
+}
+
+.commentCard {
+  margin: 20px auto;
+  max-width: 800px;
+  max-height: 400px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #a55e01;
+  /* box-shadow: 0px 0px 30px hsl(27, 5%, 40%); */
+  display: grid;
+  grid-template-columns: 50px 750px;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+  "avatar author"
+  "commBody commBody"
+  "commVotes commVotes";
+}
+
+#author {
+  grid-area: author;
+  color: rgb(255, 251, 251);
+  font-size: 15px;
+  max-width: 800px;
+  text-align: left;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#avatar {
+  grid-area: avatar;
+  padding: 10px;
+}
+
+#avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#commBody {
+  grid-area: commBody;
+  text-align: left;
+  padding:10px;
+  color: #ffffff;
+}
+
+#commVotes {
+  grid-area: commVotes;
+  background-color: #a8793b;
+  max-width: 800px;
+  text-align: left;
+  padding-left: 10px;
+  display: flex;
+  color: #ffffff;
+}
+
+#commVotes button {
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  background-color: #a8793b;
+  padding-left: 10px;
+}
+
+#commVotes button img {
+  max-width: 30px;
+}
+
+.userSection {
+  color: white;
+  margin: 20px auto;
+  width: 700px;
+
+  align-content: center;
+  justify-items: stretch;
+  justify-content: space-between;
+  align-items: stretch;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-areas:
+  "avatar info"
+}
+
+.avatar {
+  grid-area: avatar;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.avatar img {
+  width: 250px;
+  height: 250px;
+  border: none;
+  border-radius: 50%;
+}
+
+.info {
+  grid-area: info;
+  padding: 20px;
+  text-align: left;
 }

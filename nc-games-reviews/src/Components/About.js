@@ -12,7 +12,7 @@ export default function About({slug}) {
 
   if(slug) {
     return (
-      <div>
+      <div className="about">
         {cats.map((cat) => {
         if(slug === cat.slug) {
           return <p>{cat.description}</p>

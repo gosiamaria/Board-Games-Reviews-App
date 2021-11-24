@@ -3,27 +3,28 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"
 import Nav from './Components/Nav';
 import Reviews from './Components/Reviews';
+import Review from './Components/Review';
 import UserCorner from './Components/UserCorner';
 import Category from "./Components/Category"
-import { UserContext } from "./context/user";
-import { useState } from "react";
+import RequireLogin from './Components/RequireLogin';
+import UserPage from './Components/UserPage';
 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState([]);
-
   return (
-    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
       <div className="App">
-        <UserCorner />
+        <RequireLogin>
         <Header />
+        <UserCorner />
         <Nav />
         <Routes>
           <Route path="/" element={<Reviews />} />
+          <Route path="/reviews/:review_id" element={<Review />} />
           <Route path="/categories/:slug" element={<Category />} />
+          <Route path="/users/:username" element={<UserPage />} />
         </Routes>
+        </RequireLogin>
       </div>
-    </UserContext.Provider>
   );
 }
 

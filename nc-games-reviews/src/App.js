@@ -5,19 +5,11 @@ import Nav from './Components/Nav';
 import Reviews from './Components/Reviews';
 import Review from './Components/Review';
 import UserCorner from './Components/UserCorner';
-import Category from "./Components/Category"
 import RequireLogin from './Components/RequireLogin';
 import UserPage from './Components/UserPage';
 import { useState } from "react";
 
 function App() {
-  const [reviews, setReviews] = useState([]);
-  const [query, setQuery] = useState({
-    sort: 'created_at',
-    order: 'desc',
-    limit: 10,
-    p: 1,
-  })
   return (
       <div className="App">
         <RequireLogin>
@@ -25,9 +17,9 @@ function App() {
         <UserCorner />
         <Nav />
         <Routes>
-          <Route path="/" element={<Reviews setReviews={setReviews} reviews={reviews} setQuery={setQuery} query={query}/>} />
+          <Route path="/" element={<Reviews />} />
           <Route path="/reviews/:review_id" element={<Review />} />
-          <Route path="/categories/:slug" element={<Category setReviews={setReviews} reviews={reviews} setQuery={setQuery} query={query}/>} />
+          <Route path="/categories/:slug" element={<Reviews />} />
           <Route path="/users/:username" element={<UserPage />} />
         </Routes>
         </RequireLogin>

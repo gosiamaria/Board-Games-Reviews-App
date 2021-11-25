@@ -32,7 +32,7 @@ export default function Login() {
                 disabled
                 selected
                 >
-                Select user
+                select user
                 </option>
                 {users.map((user) => {
                 return (
@@ -43,7 +43,7 @@ export default function Login() {
                 })}
                 </select>
                 </label>
-                <button>Login</button>
+                <button>login</button>
             </form>
         </div>
     )

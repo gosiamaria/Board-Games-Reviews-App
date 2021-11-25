@@ -20,7 +20,7 @@ export default function SingleReviewCard({ review }) {
             </div>
 
             <div id="comms">
-                <p><img src="https://cdn-icons-png.flaticon.com/512/54/54761.png" alt="commentIcon"/>{review.comment_count} comments</p>
+                <p>{review.comment_count} comments</p>
             </div>
 
             <div id="vote">

@@ -1,15 +1,24 @@
 import About from "./About";
 import { getAllReviews } from "../utils/api";
 import { useState, useEffect } from "react";
-import ReviewCard from "./ReviewCard"
+import ReviewCard from "./ReviewCard";
+import { useParams } from "react-router-dom";
 
-export default function Reviews({ setReviews, reviews, setQuery, query }) {
+export default function Reviews() {
+  const { slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const numArr = [5, 10, 20, 50];
+  const [reviews, setReviews] = useState([]);
+  const [query, setQuery] = useState({
+    sort: 'created_at',
+    order: 'desc',
+    limit: 10,
+    p: 1,
+  })
 
   useEffect(() => {
     setIsLoading(true);
-    getAllReviews(query).then((reviews) => {
+    getAllReviews(query, slug).then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
     });
@@ -47,9 +56,8 @@ export default function Reviews({ setReviews, reviews, setQuery, query }) {
   }
   
   return (
-    <main>
-      <h2 className="subTitle">About Northcoders Games Reviews</h2>
-      <About />
+    <section className="main">
+      <About slug={slug} />
       <div className="sortBy">
         <select className="sortByOptions" onChange={handleSortby}>
           <option
@@ -100,6 +108,6 @@ export default function Reviews({ setReviews, reviews, setQuery, query }) {
             return <ReviewCard review={review} />
           })}
         </div>
-    </main>
+    </section>
     )
 }

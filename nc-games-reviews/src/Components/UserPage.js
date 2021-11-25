@@ -1,10 +1,8 @@
-import { UserContext } from "../context/UserContext";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUserByUsername } from "../utils/api";
 
 export default function UserPage(props) {
-    const { currentUser } = useContext(UserContext);
     const { username } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState({});
@@ -16,6 +14,10 @@ export default function UserPage(props) {
             setIsLoading(false);
         })
     }, [username])
+
+    if (isLoading) {
+        return <p>...loading</p>;
+    }
 
     return (
         <div className="userSection">

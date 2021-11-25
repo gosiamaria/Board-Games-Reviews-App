@@ -6,8 +6,8 @@ export default function SingleReviewCard({ review }) {
     return (
         <section className="reviewCard">
             <div id="postedBy">
-                <p> Posted by:<Link to={`/users/${review.owner}`} className="userLink"> {review.owner} </Link> • 
-                {review.created_at}</p>
+            <p> Posted by:<Link to={`/users/${review.owner}`} className="userLink"> {review.owner} </Link> {' '}• {' '}
+                {review.created_at.slice(0,10)} {' '} {' '} at{' '} {review.created_at.slice(11,16)}</p>
             </div>
             <div id="revTitle">
                 <p>{review.title}</p>

@@ -4,8 +4,12 @@ const reviewsApi = axios.create({
     baseURL: "https://nc-games-by-gosia.herokuapp.com/api"
 })
 
-export const getAllReviews = (sort, order) => {
-    return reviewsApi.get(`/reviews?sort_by=${sort}&&order=${order}`).then((res) => {
+export const getAllReviews = ({ sort, order, limit, p }, category ) => {
+    let path = `/reviews?sort_by=${sort}&order=${order}&limit=${limit}&p=${p}`;
+    if(category) {
+        path += `&category=${category}`
+    }
+    return reviewsApi.get(`${path}`).then((res) => {
         return res.data.reviews;
     })
 }
@@ -25,12 +29,6 @@ export const getAllUsers = () => {
 export const getUserByUsername = (username) => {
     return reviewsApi.get(`/users/${username}`).then((res) => {
         return res.data.user;
-    })
-}
-
-export const getReviewsByCat = (cat) => {
-    return reviewsApi.get(`/reviews?category=${cat}`).then((res) => {
-        return res.data.reviews;
     })
 }
 
@@ -58,8 +56,15 @@ export const postComment = (review_id, username, comment) => {
     })
 }
 
+export const deleteComment = (comment_id) => {
+    return reviewsApi.delete(`/comments/${comment_id}`).then(() => {
+        console.log('Deleted')
+    })
+}
+
 export const patchVotesComments = (comment_id, inc) => {
     return reviewsApi.patch(`/comments/${comment_id}`, {inc_votes: inc}).then((res) => {
         return res.data.votes;
     })
 }
+

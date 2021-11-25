@@ -3,29 +3,44 @@ import { getAllReviews } from "../utils/api";
 import { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard"
 
-export default function Reviews() {
-  const [reviews, setReviews] = useState([]);
+export default function Reviews({ setReviews, reviews, setQuery, query }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [sort, setSort] = useState('created_at')
-  const [order, setOrder] = useState('desc')
-
+  const numArr = [5, 10, 20, 50];
 
   useEffect(() => {
     setIsLoading(true);
-    getAllReviews(sort, order).then((reviews) => {
+    getAllReviews(query).then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-  },[order]);
+  },[query]);
   
-  const handleSelect = (e) => {
+  const handleSortby = (e) => {
     e.preventDefault();
-    setSort(e.target.value);
-  }
-  const handleChange = (e) => {
+    setQuery((prevQuery) => {
+      let newQuery = {...prevQuery}
+      newQuery.sort = e.target.value;
+      return newQuery;
+  })
+}
+
+  const handleOrder = (e) => {
     e.preventDefault();
-    setOrder(e.target.value);
-  }
+    setQuery((prevQuery) => {
+      let newQuery = {...prevQuery}
+      newQuery.order = e.target.value;
+      return newQuery;
+  })
+}
+
+  const handleItemsPerPage = (e) => {
+    e.preventDefault();
+    setQuery((prevQuery) => {
+      let newQuery = {...prevQuery}
+      newQuery.limit = e.target.value;
+      return newQuery;
+  })
+}
 
   if (isLoading) {
     return <p>...loading</p>;
@@ -36,7 +51,7 @@ export default function Reviews() {
       <h2 className="subTitle">About Northcoders Games Reviews</h2>
       <About />
       <div className="sortBy">
-        <select className="sortByOptions" onChange={handleSelect}>
+        <select className="sortByOptions" onChange={handleSortby}>
           <option
             key="sortByOptions selector"
             value="sortByOptions selector"
@@ -47,11 +62,11 @@ export default function Reviews() {
             Sort by
           </option>
           <option key="created_at" value="created_at">date</option>
-          <option key="comment_count" value="comment_count">comment count</option>
+          <option key="title" value="title">title</option>
           <option key="votes" value="votes">votes</option>
         </select>
 
-        <select className="orderOptions" onChange={handleChange}>
+        <select className="orderOptions" onChange={handleOrder}>
         <option key="orderOptions selector"
             value="orderOptions selector"
             defaultValue="orderOptions"
@@ -63,6 +78,22 @@ export default function Reviews() {
           <option key="asc" value="asc">Ascending</option>
           <option key="desc" value="desc">Descending</option>
         </select>
+
+        <select className="itemsPerPage" onChange={handleItemsPerPage}>
+        <option key="itemsPerPage selector"
+            value="itemsPerPage selector"
+            defaultValue="itemsPerPage"
+            disabled
+            selected
+          >
+            Items per page
+          </option>
+          {numArr.map((num) => {
+            return <option key={num} value={num}>{num}</option>
+          })}
+        </select>
+
+
       </div>
         <div className="display">
           {reviews.map((review) => {

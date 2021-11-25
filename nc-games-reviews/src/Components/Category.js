@@ -1,32 +1,50 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getReviewsByCat } from "../utils/api";
+import { getAllReviews } from "../utils/api";
 import About from "./About";
 import ReviewCard from "./ReviewCard"
 
-export default function Category(props){
-    const { slug } = useParams();
-    const [reviews, setReviews] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [sort, setSort] = useState('created_at')
-    const [order, setOrder] = useState('desc')
+export default function Category( { setReviews, reviews, setQuery, query } ){
+  const { slug } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
+  const numArr = [5, 10, 20, 50];
+
+
 
     useEffect(() => {
-        setIsLoading(true);
-        getReviewsByCat(slug).then((reviews) => {
+      setIsLoading(true);
+      getAllReviews(query, slug).then((reviews) => {
         setReviews(reviews);
         setIsLoading(false);
-    });
-    }, [slug, order]);
+      });
+    },[slug, query]);
 
-    const handleSelect = (e) => {
-        e.preventDefault();
-        setSort(e.target.value);
-    }
-    const handleChange = (e) => {
-        e.preventDefault();
-        setOrder(e.target.value);
-    }
+    const handleSortby = (e) => {
+      e.preventDefault();
+      setQuery((prevQuery) => {
+        let newQuery = {...prevQuery}
+        newQuery.sort = e.target.value;
+        return newQuery;
+    })
+  }
+  
+    const handleOrder = (e) => {
+      e.preventDefault();
+      setQuery((prevQuery) => {
+        let newQuery = {...prevQuery}
+        newQuery.order = e.target.value;
+        return newQuery;
+    })
+  }
+  
+    const handleItemsPerPage = (e) => {
+      e.preventDefault();
+      setQuery((prevQuery) => {
+        let newQuery = {...prevQuery}
+        newQuery.limit = e.target.value;
+        return newQuery;
+    })
+  }
 
     if (isLoading) {
         return <p>...loading</p>;
@@ -37,7 +55,7 @@ export default function Category(props){
           <h2 className="subTitle">{slug}</h2>
         <About slug={slug} />
         <div className="sortBy">
-        <select className="sortByOptions" onChange={handleSelect}>
+        <select className="sortByOptions" onChange={handleSortby}>
           <option
             key="sortByOptions selector"
             value="sortByOptions selector"
@@ -52,7 +70,7 @@ export default function Category(props){
           <option key="votes" value="votes">votes</option>
         </select>
 
-        <select className="orderOptions" onChange={handleChange}>
+        <select className="orderOptions" onChange={handleOrder}>
         <option key="orderOptions selector"
             value="orderOptions selector"
             defaultValue="orderOptions"
@@ -64,6 +82,21 @@ export default function Category(props){
           <option key="asc" value="asc">Ascending</option>
           <option key="desc" value="desc">Descending</option>
         </select>
+
+        <select className="itemsPerPage" onChange={handleItemsPerPage}>
+        <option key="itemsPerPage selector"
+            value="itemsPerPage selector"
+            defaultValue="itemsPerPage"
+            disabled
+            selected
+          >
+            Items per page
+          </option>
+          {numArr.map((num) => {
+            return <option key={num} value={num}>{num}</option>
+          })}
+        </select>
+
       </div>
         {reviews.map((review) => {
             return <ReviewCard review={review} />

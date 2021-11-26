@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Northcoders Boardgames Review Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## YOU CAN FIND MY HOSTED VERION HERE: 
 
-## Available Scripts
+### https://61a0fa9dd120a423e80a2145--boardgames-reviews-app.netlify.app/
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Hosted Version of the API can be accessed in the link below:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://nc-games-by-gosia.herokuapp.com/api
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
+## Description
+Northcoders Boardgames reviews board app is a platform on which users can access reviews for different boardgames, vote on them as well as leave a comment. The reviews can be sorted by date, title or votes in either an ascending or descending order. The user can also limit the number of reviews they want to view per page or 'View all' if they wish to.
 
-### `npm test`
+The user can also select a category to view reviews only for that specific category.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to leave and/or delete comments, the user needs to be logged in and is only able to delete their own comments.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run locally you need to: 
+1. **`Clone this repo`** - Paste the below command into your terminal (in the directory of your choosing):
+    
+        git clone https://github.com/gosiamaria/Northcoders-be-games.git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **`Open the repo in a code editor`** such as VSCode, then open your integrated terminal.
 
-### `npm run eject`
+3. **`Install all required dependencies`** by pasting the below code into your terminal:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+        npm install
+        npm install --dev
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **`To run`** paste the below into your terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+## VOILA!
+Hope you enjoy this API, feel free to drop me a msg with any questions!

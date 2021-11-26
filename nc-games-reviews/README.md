@@ -37,6 +37,3 @@ To run locally you need to:
 
         npm start
 
----
-## VOILA!
-Hope you enjoy this API, feel free to drop me a msg with any questions!

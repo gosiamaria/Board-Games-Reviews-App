@@ -23,17 +23,9 @@ export default function AddVotesComments({ votes, comment_id}){
 
     return (
         <>
-        <button
-            onClick={handleClickInc}
-            className="votes-button"
-        >
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Sort_up_font_awesome.svg/1024px-Sort_up_font_awesome.svg.png" alt="buttonUp" />
-        </button>
+        <img onClick={handleClickInc} className="votes-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Sort_up_font_awesome.svg/1024px-Sort_up_font_awesome.svg.png" alt="buttonUp" />
         <p>{votes + addedVotes}</p>
-        <button
-            onClick={handleClickDec}
-            className="votes-button"
-        ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Sort_down_font_awesome.svg/1024px-Sort_down_font_awesome.svg.png" alt="buttonDown" /></button>
+        <img onClick={handleClickDec} className="votes-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Sort_down_font_awesome.svg/1024px-Sort_down_font_awesome.svg.png" alt="buttonDown" />
         {isError ? <p>Oops, something went wrong.</p> : null}
         </>
     )

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getReviewById } from "../../utils/api";
 import { useParams } from "react-router-dom";
 import ReviewCard from "../Reviews/ReviewCard";
-import GetComments from "./GetComments";
+import Comments from "./Comments";
 
 export default function Review() {
     const { review_id } = useParams();
@@ -30,7 +30,7 @@ export default function Review() {
     return (
         <div className="singleReview">
             <ReviewCard review={review} />
-            <GetComments review_id={review.review_id} />
+            <Comments review_id={review.review_id} />
         </div>
     )
 }

@@ -7,7 +7,7 @@ export default function App() {
         <Link to="/" className="title-link">
         <div>
       <img src={logo} alt="logo" />
-        <h1>NORTHCODERS GAMES REVIEWS</h1>
+        <h1>BOARD GAMES REVIEWS</h1>
         </div>
         </Link>
     </header>

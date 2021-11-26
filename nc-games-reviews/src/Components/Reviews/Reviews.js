@@ -62,7 +62,7 @@ export default function Reviews() {
 }
 
   if (isLoading) {
-    return <p><img id="loading" src="https://i.pinimg.com/originals/58/e4/a4/58e4a4e4fa041a11f796a2014b1bcfa4.gif" alt="loading"/></p>
+    return <p><img id="loading" src="https://www.providentinsurance.co.uk/Static/images/loader.gif" alt="loading"/></p>
   }
   if(err) return <p>{err}</p>;
   

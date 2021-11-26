@@ -6,7 +6,7 @@ import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-export default function GetComments({review_id}){
+export default function Comments({review_id}){
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [commentToAdd, setCommentToAdd] = useState('');
@@ -37,20 +37,26 @@ export default function GetComments({review_id}){
 
     return(
         <>
-        <form className="form" onSubmit={handleSubmit}>
+        <div className="commentForm">
+            <form onSubmit={handleSubmit}>
+                <div id="label">
                 <label htmlFor="newComment">Comment as <Link to={`/users/${currentUser.username}`} className="userLink">{currentUser.username}</Link></label>
+                </div>
+                <div>
                 <input 
                 type="text" 
                 value={commentToAdd}
                 placeholder='What are your thoughts?'
                 name="newComment"
-                id="newComment"
+                id="input"
                 required
                 onChange={(e) => setCommentToAdd(e.target.value)} />
+                </div>
                 <button id="button" type="submit">Add comment</button>
                 <p>{confirmation}</p>
                 <p></p>
             </form>
+        </div>
         <div className="display">
             {comments.map((comment) => {
                 return <CommentCard comment={comment} />

@@ -34,8 +34,8 @@ export default function UserPage(props) {
     return (
         <div className="userSection">
             <div className="info">
-                <h2>Username: {user.username}</h2>
-                <p>Name: {user.name}</p>
+                <h4>Username: {user.username}</h4>
+                <h4>Name: {user.name}</h4>
             </div>
             <div className="avatar">
                 <img src={user.avatar_url} alt={user.username} />

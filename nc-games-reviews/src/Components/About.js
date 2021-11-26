@@ -26,8 +26,7 @@ export default function About({slug}) {
 
   return (
     <div className="about">
-      <h2>About Northcoders Games Reviews</h2>
-      <p>The #1 source for news, information, and discussion about modern board games and board game culture. Join our community! Come discuss games like Codenames, Arkham Horror, Terra Mystica, and all your other favorite games!</p>
+      <h4>The #1 source for news, information, and discussion about modern board games and board game culture. Join our community! Come discuss games like Codenames, Arkham Horror, Terra Mystica, and all your other favorite games!</h4>
     </div>
   )
 }

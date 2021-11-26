@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Benne&family=Fredoka+One&family=Roboto+Slab:wght@300&family=Secular+One&display=swap');
 
+
+
 .App {
   margin: 0px;
   padding:0px;
@@ -11,29 +13,36 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content 100px auto;
+  grid-template-rows: min-content min-content min-content min-content min-content auto;
   grid-template-areas:
   "userCorner"
   "title"
   "nav"
-  "main";
+  "about"
+  "sortBy"
+  "display";
 }
 
+/* 🙂 -------------------------------IPHONE 8----------------------------------- 🙂*/
+
+/* 🙂 -------------------------------LOGIN----------------------------------- 🙂*/
 .login {
-  grid-area: main;
+  text-align: center;
+  grid-area: sortBy;
   height: 300px;
 }
 .userOptions {
-    height: 80px;
-    max-width: 400px;
-    min-width: 300px;
-    border-radius: 30px;
+    height: 50px;
+    width: 160px;
+    border-radius: 50px;
     padding: 10px;
+    margin: 2px;
     background-color: #000000;
     color: white;
+    justify-items: center;
+    align-items: center;
     border: none;
     font-weight: bold;
-    font-size: large;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-align: center;
@@ -41,24 +50,22 @@
 .userOptions:hover {
   background-color: #31312d;
 }
-
-
 .login button {
   background-color: #000000;
   color: white;
   border: none;
   font-weight: bold;
-  font-size: large;
-  border-radius: 30px;
-  height: 80px;
-  min-width: 200px;
+  border-radius: 50px;
+  height: 50px;
+  width: 160px;
   padding:10px;
-  margin-left: 10px;
+  margin: 2px;
 }
-
 .login button:hover {
   background-color: #31312d;
 }
+
+/* 🙂 -------------------------------USER CORNER----------------------------------- 🙂*/
 
 .userCorner {
   grid-area: userCorner;
@@ -68,6 +75,7 @@
   justify-content: flex-end;
   align-content: space-around;
   align-items: center;
+  font-size: small;
   color: white;
   padding-right: 10px;
   font-weight: bold;
@@ -88,20 +96,19 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin: 10px;
+  margin: 5px;
 }
 .userCorner button {
   font-weight: bold;
+  width: 80px;
   border: none;
-  border-radius: 30px;
-  padding:10px;
-  margin-left: 10px;
+  border-radius: 40px;
+  padding:8px;
 }
-
+/* 🙂 ------------------------------HEADER----------------------------------- 🙂*/
 header {
   grid-area: title;
   width: 100%;
-  height: 300px;
   background-color: #cfa74f;
   display: flex;
   justify-content: center;
@@ -112,13 +119,12 @@ header {
   font-weight: normal;
 }
 .title-link h1{
-  text-align: left;
+  text-align: center;
 }
 .title-link img {
-  width: 220px;
-  height: 220px;
+  width: 170px;
+  height: 170px;
 }
-
 .title-link {
   color: rgb(43, 95, 86);
   text-decoration: none;
@@ -132,20 +138,20 @@ header {
   text-decoration: none;
 }
 
+/* 🙂 ------------------------------N-A-V----------------------------------- 🙂*/
 .nav {
   grid-area: nav;
   background-color: #cfa74f;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
-  height: 100%;
 }
 .nav select {
-  height: 60px;
-  min-width: 300px;
-  border-radius: 20px;
+  height: 40px;
+  width: 200px;
+  border-radius: 30px;
   padding: 8px;
   background-color: #ad9c3c;
   border: none;
@@ -158,46 +164,30 @@ header {
   background-color: rgb(184, 219, 216);
 }
 
-.main {
-  grid-area: main;
-  background-color: white;
-  justify-items: center;
-  margin: 0;
-  display: grid;
-  grid-template-rows: min-content min-content auto;
-  grid-template-areas:
-  "about"
-  "sortBy"
-  "display";
-}
-
+/* 🙂 ------------------------------ABOUT----------------------------------- 🙂*/
 .about {
   grid-area: about;
-  background-color: #dbdddf;
   width: 100%;
+  background-color: #dbdddf;
   justify-items: center;
-  margin: auto;
   font-family: 'Benne', serif;
-  font-size: large;
   display: grid;
-  grid-template-columns: auto 500px auto;
   grid-template-rows: min-content min-content;
   grid-template-areas:
-  ". subtitle ."
-  ". description .";
+  "subtitle"
+  "description";
 }
 .about h2 {
   grid-area: subtitle;
   font-family: 'Benne', serif;
-  padding:0 10px 0 10px;
+  padding:0 5px 0 5px;
 }
 .about p {
   grid-area: description;
   padding:0 10px 0 10px;
 }
-#catName {
-  color: white;
-}
+
+/* 🙂 ------------------------------SORT BY----------------------------------- 🙂*/
 .sortBy {
   grid-area: sortBy;
   width: 100%;
@@ -206,14 +196,14 @@ header {
 .sortBy select {
   text-align: center;
   padding:10px;
+  font-size: small;
   border-radius: 20px;
-  width: 130px;
   border:none;
-  background-color: #a85b02;
+  background-color: #a7ad6a;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -221,6 +211,17 @@ header {
 .sortBy select:hover {
   background-color: rgb(184, 219, 216);
 }
+.sortByOptions {
+  width: 80px;
+}
+.orderOptions {
+  width: 80px;
+}
+.itemsPerPage{
+  width: 120px;
+}
+
+/* 🙂 ---------------------------- ---DISPLAY-------------------------------- 🙂*/
 .display {
   background-color: #dbdddf;
   width: 100%;
@@ -230,355 +231,78 @@ header {
   flex-direction: column;
 }
 
+#loading {
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  text-align: center;
+}
+
+/* 🙂 ------------------------------REVIEWCARD----------------------------------- 🙂*/
 .reviewCard {
   margin: 20px auto;
   background-color: #ffffff;
   border-radius: 5px;
-  max-height: 400px;
-  align-content: center;
-  justify-content: space-between;
-  align-items: stretch;
-  justify-items: stretch;
-  /* box-shadow: 0px 0px 30px hsl(27, 5%, 40%); */
+  width: 350px;
+  height: 300px;
+  font-size: small;
+  align-items: center;
   display: grid;
-  grid-template-columns: 40px 360px 150px;
-  grid-template-rows: 50px 50px auto 50px;
+  grid-template-columns: 20px 330px;
+  grid-template-rows:15px 60px 70px 130px 25px;
   grid-template-areas:
-  "postedBy postedBy postedBy"
-  "vote revTitle revTitle"
-  "vote revBody revImg"
-  "vote comms revImg";
+  "postedBy postedBy"
+  "vote revTitle"
+  "vote revImg"
+  "vote revBody"
+  "vote comms";
 }
 
 #postedBy {
   grid-area: postedBy;
-  border-radius: 5px 5px 0 0;
+  text-align: left;
   align-items: center;
-  background-color: #8f8f8f;
-  text-align: start;
-  justify-items: stretch;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  background-color: #6ca5a5;
   color: rgb(19, 19, 19);
-  font-size: 15px;
-  margin: 0px;
-  padding-left: 15px;
+  font-size: small;
+}
+postedBy p {
+  padding-left: 5px;
 }
 
 #vote {
-  background-color: #ffffff;
-  border-radius: 0 0 0 5px;
-  grid-area: vote;
-  max-width: 50px;
-}
-
-#vote button {
-  background-color: #ffffff;
-  font-weight: bold;
-  border: none;
-  padding-top: 10px;
-}
-
-#vote button img {
-  max-width: 30px;
-}
-#vote button img:hover {
-  transform: scale(1.5);
-}
-
-#revTitle {
-  grid-area: revTitle;
-  font-size: large;
-  font-weight: bold;
-  text-align: left;
-  padding-left: 5px;
-}
-
-.singleReview {
-  background-color: #dbdddf;
-}
-
-#revBody {
-  max-height: 300px;
-  grid-area: revBody;
-  text-align: left;
-  padding: 10px;
-  overflow-y: scroll;
-}
-
-
-#revImg {
-  grid-area: revImg;
-  padding: 5px;
-}
-
-#revImg img {
-  border-radius: 5px;
-  object-fit: cover;
-  width: 100%;
-}
-
-#comms {
-  background-color: #ffffff;
-  grid-area: comms;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-  padding-left: 5px;
-}
-
-
-.form {
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.form label {
-  background-color: rgb(207, 165, 24);
-  padding: 10px;
-  width: 530px;
-  border-radius: 5px 5px 0 0;
-}
-
-#newComment {
-  background-color: #ffffff;
-  border: none;
-  width: 530px;
-  height: 150px;
-  padding: 10px;
-  justify-content: flex-start;
-  font-size: large;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-#button {
-  text-align: center;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 30px;
-  background-color: #f1f1ee;
-  border: none;
-}
-
-.commentCard {
-  margin: 20px auto;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: stretch;
-  background-color: #cac7c2;
-  display: grid;
-  grid-template-columns: 50px 100px 250px;
-  grid-template-rows: 50px auto 50px;
-  grid-template-areas:
-  "avatar author author"
-  "commBody commBody commBody"
-  "commVotes commVotes delete";
-}
-
-#author {
-  grid-area: author;
-  border-radius: 0 5px 0 0;
-  background-color: #a8793b;
-  color: rgb(0, 0, 0);
-  font-size: 15px;
-  text-align: left;
-  margin: 0;
-  padding: 10px;
-}
-
-#avatar {
-  border-radius: 5px 0 0 0;
-  background-color: #a8793b;
-  grid-area: avatar;
-  padding: 10px;
-}
-
-#avatar img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
-#commBody {
-  width: 100%;
-  grid-area: commBody;
-  text-align: left;
-  padding:10px;
-  color: rgb(0, 0, 0);
-}
-
-#commVotes {
-  align-items: center;
-  border-radius: 0 0 0 5px;
-  grid-area: commVotes;
-  text-align: left;
-  padding-left: 10px;
-  display: flex;
-  color: rgb(0, 0, 0);
-}
-
-#commVotes button {
-  background-color: #cac7c2;
-  text-align: center;
-  font-weight: bold;
-  border: none;
-  padding-left: 10px;
-}
-
-#commVotes button img {
-  background-color: #cac7c2;
-  max-width: 30px;
-}
-
-.delete {
-  grid-area: delete;
-  color: #000000;
-  text-align: left;
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-}
-.delete p {
-  color: #000000;
-  font-size: normal;
-  padding-right: 10px;
-  font-weight: bold;
-}
-.delete p:hover {
-  color: #960707;
-}
-
-
-
-
-
-
-
-
-
-/* ---------------------------------WIDE SCREEN---------------------------------------------- */
-@media only screen and (min-width: 600px) {
-.reviewCard {
-  margin: 20px auto;
-  max-width: 800px;
-  min-width: 550px;
-  max-height: 500px;
-  background-color: #ffffff;
-  border-radius: 5px;
   align-content: center;
-  justify-content: space-between;
-  align-items: stretch;
-  justify-items: stretch;
-  /* box-shadow: 0px 0px 30px hsl(27, 5%, 40%); */
-  display: grid;
-  grid-template-columns: minmax(40px, 50px) minmax(500px, 550px) minmax(150px, 200px);
-  grid-template-rows: 50px 50px auto 50px;
-  grid-template-areas:
-  "postedBy postedBy postedBy"
-  "vote revTitle revTitle"
-  "vote revBody revImg"
-  "vote comms revImg";
-}
-
-#postedBy {
-  grid-area: postedBy;
-  border-radius: 5px 5px 0 0;
-  align-items: center;
-  background-color: #b9b9b9;
-  text-align: start;
-  justify-items: stretch;
-  color: rgb(19, 19, 19);
-  font-size: 15px;
-  max-width: 800px;
-  margin: 0px;
-  padding-left: 15px;
-}
-
-#vote {
+  text-align: center;
+  justify-items: start;
+  align-items: start;
   background-color: #ffffff;
   border-radius: 0 0 0 5px;
   grid-area: vote;
-  max-width: 50px;
 }
 
-#vote button {
-  background-color: #ffffff;
-  font-weight: bold;
-  border: none;
-  padding-top: 10px;
-}
 
-#vote button img {
-  max-width: 30px;
-}
-#vote button img:hover {
-  transform: scale(1.5);
-}
-
-#revTitle {
-  grid-area: revTitle;
-  font-size: large;
-  font-weight: bold;
-  text-align: left;
-  padding-left: 5px;
-}
-
-.singleReview {
-  background-color: #dbdddf;
-}
-
-#revBody {
-  grid-area: revBody;
-  text-align: left;
-  padding: 10px;
-  overflow-y: scroll;
-}
-/* width */
-::-webkit-scrollbar {
+#vote img {
   width: 15px;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
+#vote img:hover {
+  transform: scale(1.5);
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #a2a34b; 
-}
-
-
-#revImg {
-  grid-area: revImg;
-  padding: 5px;
-}
-
-#revImg img {
-  border-radius: 5px;
-  object-fit: cover;
-  width: 100%;
-}
-
-#comms {
-  background-color: #ffffff;
-  grid-area: comms;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  max-width: 500px;
-  text-align: left;
+#revTitle {
+  font-size: small;
   padding-left: 5px;
+  grid-area: revTitle;
+  font-weight: bold;
+  text-align: left;
+  justify-items: start
 }
 
-#comms img {
-  align-items: center;
-  background-color: #ffffff;
-  height: 25px;
+.singleReview {
+  grid-area: display;
+  background-color: #dbdddf;
 }
-
 .singleReviewLink {
   font-weight: bold;
   color: rgb(78, 172, 167);
@@ -592,79 +316,105 @@ header {
   color: rgb(78, 172, 167);
   text-decoration: none;
 }
-
-
-.form {
-  color: rgb(255, 255, 255);
-  display: flex;
-  border-radius: 5px;
-  flex-direction: column;
-  align-items: center;
-}
-.form label {
-  background-color: rgb(207, 165, 24);
-  width: 780px;
+#revBody {
+  height: 100px;
+  grid-area: revBody;
+  text-align: left;
   padding: 10px;
-  border-radius: 5px 5px 0 0;
+  overflow-y: scroll;
+}
+#revImg {
+  grid-area: revImg;
+  padding: 5px;
+}
+#revImg img {
+  border-radius: 5px;
+  object-fit: cover;
+  height: 70px;
+}
+#comms {
+  background-color: #ffffff;
+  grid-area: comms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding-left: 5px;
 }
 
-#newComment {
+/* 🙂 ---------------------------------- FORM ------------------------------------------- 🙂*/
+
+.commentForm {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content min-content 50px;
+  grid-template-areas:
+  "label"
+  "input"
+  "submit";
+} 
+.commentForm label {
+  grid-area: label;
+}
+.commentForm input {
+  grid-area: input;
   background-color: #ffffff;
+  width: 330px;
+  height: 80px;
   border: none;
-  width: 780px;
-  height: 150px;
   padding: 10px;
   justify-content: flex-start;
-  font-size: large;
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 #button {
+  grid-area: submit;
   text-align: center;
   font-weight: bold;
-  padding: 10px;
-  border-radius: 30px;
-  background-color: #f1f1ee;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 120px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #b3b31c;
   border: none;
+  color: #000000;
 }
 
+/* 🙂 ---------------------------------- COMMENT CARD ------------------------------------------- 🙂*/
 .commentCard {
   margin: 20px auto;
-  max-width: 800px;
-  max-height: 400px;
   border-radius: 5px;
   justify-content: center;
-  align-items: stretch;
-  background-color: #ffffff;
+  font-size: small;
+  align-items: start;
+  background-color: #cac7c2;
   display: grid;
-  grid-template-columns: 50px 60px 690px;
+  grid-template-columns: 50px 100px 200px;
   grid-template-rows: 50px auto 50px;
   grid-template-areas:
   "avatar author author"
   "commBody commBody commBody"
   "commVotes commVotes delete";
 }
-
 #author {
   grid-area: author;
+  font-size: small;
   border-radius: 0 5px 0 0;
-  background-color: #b6cfd3;
+  background-color: #a8793b;
   color: rgb(0, 0, 0);
-  font-size: 15px;
-  max-width: 800px;
   text-align: left;
+  align-items: center;
+  width: 100%;
   margin: 0;
-  padding-left: 10px;
 }
-
 #avatar {
   border-radius: 5px 0 0 0;
-  background-color: #b6cfd3;
+  background-color: #a8793b;
   grid-area: avatar;
-  padding: 10px;
+  padding: 5px;
 }
-
 #avatar img {
   width: 30px;
   height: 30px;
@@ -672,37 +422,35 @@ header {
 }
 
 #commBody {
+  font-size: small;
   grid-area: commBody;
   text-align: left;
-  padding:10px;
+  padding-left:10px;
+  padding-right:10px;
   color: rgb(0, 0, 0);
 }
-
 #commVotes {
   align-items: center;
+  font-size: small;
   border-radius: 0 0 0 5px;
   grid-area: commVotes;
-  max-width: 800px;
-  text-align: left;
+  text-align: center;
   padding-left: 10px;
   display: flex;
   color: rgb(0, 0, 0);
 }
-
-#commVotes button {
-  background-color: #ffffff;
+#commVotes img {
+  background-color: #cac7c2;
   text-align: center;
   font-weight: bold;
   border: none;
-  padding-left: 10px;
 }
-
-#commVotes button img {
-  background-color: #ffffff;
-  max-width: 30px;
+#commVotes img {
+  background-color: #cac7c2;
+  max-width: 20px;
 }
-
 .delete {
+  font-size: small;
   grid-area: delete;
   color: #000000;
   text-align: left;
@@ -712,7 +460,7 @@ header {
 }
 .delete p {
   color: #000000;
-  font-size: normal;
+  font-size: small;
   padding-right: 10px;
   font-weight: bold;
 }
@@ -720,13 +468,14 @@ header {
   color: #960707;
 }
 
+/* 🙂 ------------------------------- USER SECTION ---------------------------------------- 🙂*/
 .userSection {
   color: rgb(5, 5, 5);
   width: 100%;
   align-content: center;
   justify-items: stretch;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   border-radius: 20px;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -740,8 +489,8 @@ header {
   text-align: right;
 }
 .avatar img {
-  width: 250px;
-  height: 250px;
+  width: 100px;
+  height: 100px;
   border: none;
   border-radius: 50%;
 }
@@ -751,4 +500,486 @@ header {
   padding: 20px;
   text-align: left;
 }
+
+
+/* -🙂 🙋 🙉 💟 🙂 🙋 🙉 💟 -------------WIDE SCREEN-----------🙂 🙋 🙉 💟 🙂 🙋 🙉 💟 🙂 🙋 🙉 💟  */
+
+@media only screen and (min-width: 800px) {
+  .login {
+    text-align: center;
+    grid-area: sortBy;
+    height: 300px;
+  }
+  .userOptions {
+      height: 50px;
+      width: 160px;
+      border-radius: 50px;
+      padding: 10px;
+      margin: 2px;
+      background-color: #000000;
+      color: white;
+      justify-items: center;
+      align-items: center;
+      border: none;
+      font-weight: bold;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-align: center;
+  }
+  .userOptions:hover {
+    background-color: #31312d;
+  }
+  .login button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 50px;
+    height: 50px;
+    width: 160px;
+    padding:10px;
+    margin: 2px;
+  }
+  .login button:hover {
+    background-color: #31312d;
+  }
+  
+  /* 🙂 -------------------------------USER CORNER----------------------------------- 🙂*/
+  
+  .userCorner {
+    grid-area: userCorner;
+    background-color: #cfa74f;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: space-around;
+    align-items: center;
+    font-size: small;
+    color: white;
+    padding-right: 10px;
+    font-weight: bold;
+  }
+  .userLink {
+    color: rgb(43, 95, 86);
+    text-decoration: none;
+  }
+  .userLink:hover {
+    color: rgb(2, 8, 7);
+    text-decoration: none;
+  }
+  .userLink:active {
+    color: rgb(43, 95, 86);
+    text-decoration: none;
+  }
+  .userCorner img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+  .userCorner button {
+    font-weight: bold;
+    width: 80px;
+    border: none;
+    border-radius: 40px;
+    padding:8px;
+  }
+  /* 🙂 ------------------------------HEADER----------------------------------- 🙂*/
+  header {
+    grid-area: title;
+    width: 100%;
+    height: 300px;
+    background-color: #cfa74f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Benne', serif;
+    font-size: large;
+    font-weight: normal;
+  }
+  .title-link h1{
+    text-align: center;
+  }
+  .title-link img {
+    width: 170px;
+    height: 170px;
+  }
+  .title-link {
+    color: rgb(43, 95, 86);
+    text-decoration: none;
+  }
+  .title-link:hover {
+    color: rgb(2, 8, 7);
+    text-decoration: none;
+  }
+  .title-link:active {
+    color: rgb(43, 95, 86);
+    text-decoration: none;
+  }
+  
+  /* 🙂 ------------------------------N-A-V----------------------------------- 🙂*/
+  .nav {
+    grid-area: nav;
+    background-color: #cfa74f;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .nav select {
+    height: 60px;
+    min-width: 300px;
+    border-radius: 30px;
+    padding: 8px;
+    background-color: #ad9c3c;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .nav select:hover {
+    background-color: rgb(184, 219, 216);
+  }
+  
+  /* 🙂 ------------------------------ABOUT----------------------------------- 🙂*/
+  .about {
+    grid-area: about;
+    width: 100%;
+    padding:0px;
+    background-color: #dbdddf;
+    justify-items: center;
+    font-family: 'Benne', serif;
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-template-areas:
+    "subtitle"
+    "description";
+  }
+  .about h2 {
+    grid-area: subtitle;
+    font-family: 'Benne', serif;
+    padding:0 5px 0 5px;
+  }
+  .about p {
+    grid-area: description;
+    padding:0 10px 0 10px;
+  }
+  
+  /* 🙂 ------------------------------SORT BY----------------------------------- 🙂*/
+  .sortBy {
+    grid-area: sortBy;
+    width: 100%;
+    background-color: #dbdddf;
+  }
+  .sortBy select {
+    text-align: center;
+    padding:10px;
+    font-size: small;
+    border-radius: 20px;
+    border:none;
+    background-color: #a7ad6a;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: bold;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .sortBy select:hover {
+    background-color: rgb(184, 219, 216);
+  }
+  .sortByOptions {
+    width: 80px;
+  }
+  .orderOptions {
+    width: 80px;
+  }
+  .itemsPerPage{
+    width: 120px;
+  }
+  
+  /* 🙂 ---------------------------- --REVIEW DISPLAY--------------------------------- 🙂*/
+  .display {
+    background-color: #dbdddf;
+    width: 100%;
+    justify-items: center;
+    grid-area: display;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #loading {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* 🙂 ------------------------------REVIEW REVIEWCARD----------------------------------- 🙂*/
+  .reviewCard {
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    height: 300px;
+    font-size: small;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 20px 330px;
+    grid-template-rows:15px 60px 70px 130px 25px;
+    grid-template-areas:
+    "postedBy postedBy"
+    "vote revTitle"
+    "vote revImg"
+    "vote revBody"
+    "vote comms";
+  }
+  
+  #postedBy {
+    grid-area: postedBy;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    background-color: #6ca5a5;
+    color: rgb(19, 19, 19);
+    font-size: small;
+  }
+  postedBy p {
+    padding-left: 5px;
+  }
+  
+  #vote {
+    align-content: center;
+    text-align: center;
+    justify-items: start;
+    align-items: start;
+    background-color: #ffffff;
+    border-radius: 0 0 0 5px;
+    grid-area: vote;
+  }
+  
+  
+  #vote img {
+    width: 15px;
+  }
+  #vote img:hover {
+    transform: scale(1.5);
+  }
+  
+  #revTitle {
+    font-size: small;
+    padding-left: 5px;
+    grid-area: revTitle;
+    font-weight: bold;
+    text-align: left;
+    justify-items: start
+  }
+  
+  .singleReview {
+    grid-area: display;
+  
+    background-color: #dbdddf;
+  }
+  .singleReviewLink {
+    font-weight: bold;
+    color: rgb(78, 172, 167);
+    text-decoration: none;
+  }
+  .singleReviewLink:hover {
+    color: rgb(129, 209, 196);
+    text-decoration: none;
+  }
+  .singleReviewLink:active {
+    color: rgb(78, 172, 167);
+    text-decoration: none;
+  }
+  #revBody {
+    height: 100px;
+    grid-area: revBody;
+    text-align: left;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  #revImg {
+    grid-area: revImg;
+    padding: 5px;
+  }
+  #revImg img {
+    border-radius: 5px;
+    object-fit: cover;
+    height: 70px;
+  }
+  #comms {
+    background-color: #ffffff;
+    grid-area: comms;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding-left: 5px;
+  }
+  
+  /* 🙂 ---------------------------------- FORM ------------------------------------------- 🙂*/
+  
+  .commentForm {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content 50px;
+    grid-template-areas:
+    "label"
+    "input"
+    "submit";
+  } 
+  .commentForm label {
+    grid-area: label;
+  }
+  .commentForm input {
+    grid-area: input;
+    background-color: #ffffff;
+    width: 330px;
+    height: 80px;
+    border: none;
+    padding: 10px;
+    justify-content: flex-start;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  #button {
+    grid-area: submit;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: #b3b31c;
+    border: none;
+    color: #000000;
+  }
+  
+  /* 🙂 ---------------------------------- COMMENT CARD ------------------------------------------- 🙂*/
+  .commentCard {
+    margin: 20px auto;
+    border-radius: 5px;
+    justify-content: center;
+    font-size: small;
+    align-items: start;
+    background-color: #cac7c2;
+    display: grid;
+    grid-template-columns: 50px 100px 200px;
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas:
+    "avatar author author"
+    "commBody commBody commBody"
+    "commVotes commVotes delete";
+  }
+  #author {
+    grid-area: author;
+    font-size: small;
+    border-radius: 0 5px 0 0;
+    background-color: #a8793b;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  #avatar {
+    border-radius: 5px 0 0 0;
+    background-color: #a8793b;
+    grid-area: avatar;
+    padding: 5px;
+  }
+  #avatar img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  #commBody {
+    font-size: small;
+    grid-area: commBody;
+    text-align: left;
+    height: 100px;
+    padding-left:10px;
+    padding-right:10px;
+    color: rgb(0, 0, 0);
+  }
+  #commVotes {
+    align-items: center;
+    font-size: small;
+    border-radius: 0 0 0 5px;
+    grid-area: commVotes;
+    text-align: center;
+    padding-left: 10px;
+    display: flex;
+    color: rgb(0, 0, 0);
+  }
+  #commVotes img {
+    background-color: #cac7c2;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+  }
+  #commVotes img {
+    background-color: #cac7c2;
+    max-width: 20px;
+  }
+  .delete {
+    font-size: small;
+    grid-area: delete;
+    color: #000000;
+    text-align: left;
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+  }
+  .delete p {
+    color: #000000;
+    font-size: small;
+    padding-right: 10px;
+    font-weight: bold;
+  }
+  .delete p:hover {
+    color: #960707;
+  }
+  
+  /* 🙂 ------------------------------- USER SECTION ---------------------------------------- 🙂*/
+  .userSection {
+    color: rgb(5, 5, 5);
+    width: 100%;
+    align-content: center;
+    justify-items: stretch;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+    "avatar info"
+  }
+  
+  .avatar {
+    grid-area: avatar;
+    padding: 20px;
+    text-align: right;
+  }
+  .avatar img {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 50%;
+  }
+  
+  .info {
+    grid-area: info;
+    padding: 20px;
+    text-align: left;
+  }
 }

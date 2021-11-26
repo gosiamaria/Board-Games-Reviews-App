@@ -1,6 +1,6 @@
-import { UserContext } from "../context/UserContext"
+import { UserContext } from '../../context/UserContext';
 import { useContext, useState, useEffect } from "react";
-import { getAllUsers } from "../utils/api";
+import { getAllUsers } from '../../utils/api';
 
 export default function Login() {
     const { setCurrentUser } = useContext(UserContext);

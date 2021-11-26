@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { getCommentsByReview } from "../utils/api";
-import { postComment } from "../utils/api";
+import { getCommentsByReview } from "../../utils/api";
+import { postComment } from "../../utils/api";
 import CommentCard from "./CommentCard";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ export default function GetComments({review_id}){
     }, [review_id])
 
     if (isLoading) {
-        return <p>...loading</p>;
+        return <p><img id="loading" src="https://www.providentinsurance.co.uk/Static/images/loader.gif" alt="loading"/></p>
     }
 
     const handleSubmit = (e) => {

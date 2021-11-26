@@ -2,12 +2,12 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"
 import Nav from './Components/Nav';
-import Reviews from './Components/Reviews';
-import Review from './Components/Review';
-import UserCorner from './Components/UserCorner';
-import RequireLogin from './Components/RequireLogin';
-import UserPage from './Components/UserPage';
-import { useState } from "react";
+import Reviews from './Components/Reviews/Reviews';
+import Review from './Components/ReviewPage/Review';
+import UserCorner from './Components/User/UserCorner';
+import RequireLogin from './Components/Login/RequireLogin';
+import UserPage from './Components/User/UserPage';
+import ErrorPage from './Components/ErrorPage';
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <UserCorner />
         <Nav />
         <Routes>
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<Reviews />} />
           <Route path="/reviews/:review_id" element={<Review />} />
           <Route path="/categories/:slug" element={<Reviews />} />

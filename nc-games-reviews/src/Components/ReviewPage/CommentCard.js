@@ -1,9 +1,9 @@
 import AddVotesComments from "./AddVotesComments"
 import GetAvatar from "./GetAvatar";
 import { Link } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import { useContext, useState } from "react";
-import { deleteComment } from "../utils/api";
+import { deleteComment } from '../../utils/api';
 
 export default function CommentCard({ comment }) {
     const { currentUser } = useContext(UserContext);
@@ -31,7 +31,7 @@ export default function CommentCard({ comment }) {
                 <AddVotesComments votes={comment.votes} comment_id={comment.comment_id} />
             </div>
             <div className="delete">
-            {comment.author === currentUser.username ? <button id="button" onClick={handleDelete}>Delete</button> : <p></p>}
+            {comment.author === currentUser.username ? <p onClick={handleDelete}>Delete</p> : <p></p>}
             <p>{deleteConfirmation}</p>
             </div>
         </section>

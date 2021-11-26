@@ -23,10 +23,7 @@ export default function Nav() {
       <select className="categoriesOptions" onChange={handleSelect}>
         <option
           key="Category selector"
-          value="Category selector"
-          defaultValue="Categories"
-          disabled
-          selected
+          value="" disabled="disabled" selected="selected"
         >
           Choose a category
         </option>

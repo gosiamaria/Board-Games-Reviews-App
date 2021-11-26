@@ -1,13 +1,13 @@
-import { patchVotes } from "../utils/api";
+import { patchVotesComments } from '../../utils/api';
 import { useState } from "react";
 
-export default function AddVotes({ votes, reviewId }){
+export default function AddVotesComments({ votes, comment_id}){
     const [addedVotes, setAddedVotes] = useState(0);
     const [isError, setIsError] = useState(false);
 
     const handleClickInc = () => {
         setAddedVotes((prevVotes) => prevVotes + 1);
-        patchVotes(reviewId, 1).catch(() => {
+        patchVotesComments(comment_id, 1).catch(() => {
         setIsError(true);
         setAddedVotes((prevVotes) => prevVotes - 1);
         });
@@ -15,12 +15,12 @@ export default function AddVotes({ votes, reviewId }){
 
     const handleClickDec = () => {
         setAddedVotes((prevVotes) => prevVotes - 1);
-        patchVotes(reviewId, -1).catch(() => {
+        patchVotesComments(comment_id, -1).catch(() => {
         setIsError(true);
         setAddedVotes((prevVotes) => prevVotes - 1);
         });
     };
-    
+
     return (
         <>
         <button
@@ -36,5 +36,5 @@ export default function AddVotes({ votes, reviewId }){
         ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Sort_down_font_awesome.svg/1024px-Sort_down_font_awesome.svg.png" alt="buttonDown" /></button>
         {isError ? <p>Oops, something went wrong.</p> : null}
         </>
-    );
+    )
 }

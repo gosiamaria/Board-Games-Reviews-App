@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab:wght@300&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Benne&family=Fredoka+One&family=Roboto+Slab:wght@300&family=Secular+One&display=swap');
 
 .App {
   margin: 0px;
   padding:0px;
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW8St1IGP7NG87Ik0b40FkArX2mq_93j8_kQ&usqp=CAU");
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: #a2aa8c;
+  background-color: rgb(247, 243, 243);
   font-family: 'Roboto Slab', serif;
   min-height: 100vh;
   display: grid;
@@ -61,14 +60,9 @@
   background-color: #31312d;
 }
 
-/* @media only screen and (min-width: 600px) {
-  .App {
-    grid-template-columns
-  }
-} */
 .userCorner {
   grid-area: userCorner;
-  background-color: #33322c;
+  background-color: #cfa74f;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -79,19 +73,17 @@
   font-weight: bold;
 }
 .userLink {
-  color: rgb(228, 187, 3);
+  color: rgb(43, 95, 86);
   text-decoration: none;
 }
 .userLink:hover {
-  color: #645821;
+  color: rgb(2, 8, 7);
   text-decoration: none;
 }
 .userLink:active {
-  color: rgb(228, 187, 3);
+  color: rgb(43, 95, 86);
   text-decoration: none;
 }
-
-
 .userCorner img {
   border-radius: 50%;
   width: 40px;
@@ -108,11 +100,23 @@
 
 header {
   grid-area: title;
-  background-color: #33322c;
+  width: 100%;
+  height: 300px;
+  background-color: #cfa74f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Benne', serif;
   font-size: large;
   font-weight: normal;
+}
+.title-link h1{
+  text-align: left;
+}
+.title-link img {
+  width: 220px;
+  height: 220px;
 }
 
 .title-link {
@@ -120,9 +124,8 @@ header {
   text-decoration: none;
 }
 .title-link:hover {
-  color: rgb(129, 209, 196);
+  color: rgb(2, 8, 7);
   text-decoration: none;
-  transform: scale(1.5);
 }
 .title-link:active {
   color: rgb(43, 95, 86);
@@ -131,7 +134,7 @@ header {
 
 .nav {
   grid-area: nav;
-  background-color: #33322c;
+  background-color: #cfa74f;
   height: 80px;
   display: flex;
   align-items: center;
@@ -139,12 +142,11 @@ header {
   justify-content: center;
   height: 100%;
 }
-
 .nav select {
   height: 60px;
   min-width: 300px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 8px;
   background-color: #ad9c3c;
   border: none;
   font-weight: bold;
@@ -156,11 +158,12 @@ header {
   background-color: rgb(184, 219, 216);
 }
 
-main {
+.main {
   grid-area: main;
-  display: grid;
+  background-color: white;
+  justify-items: center;
   margin: 0;
-  grid-template-columns: 100%;
+  display: grid;
   grid-template-rows: min-content min-content auto;
   grid-template-areas:
   "about"
@@ -170,11 +173,14 @@ main {
 
 .about {
   grid-area: about;
-  padding:5px;
   background-color: #dbdddf;
+  width: 100%;
+  justify-items: center;
   margin: auto;
+  font-family: 'Benne', serif;
+  font-size: large;
   display: grid;
-  grid-template-columns: auto minmax(500px, 800px) auto;
+  grid-template-columns: auto 500px auto;
   grid-template-rows: min-content min-content;
   grid-template-areas:
   ". subtitle ."
@@ -182,7 +188,7 @@ main {
 }
 .about h2 {
   grid-area: subtitle;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Benne', serif;
   padding:0 10px 0 10px;
 }
 .about p {
@@ -194,6 +200,7 @@ main {
 }
 .sortBy {
   grid-area: sortBy;
+  width: 100%;
   background-color: #dbdddf;
 }
 .sortBy select {
@@ -216,11 +223,243 @@ main {
 }
 .display {
   background-color: #dbdddf;
+  width: 100%;
+  justify-items: center;
   grid-area: display;
   display: flex;
   flex-direction: column;
 }
 
+.reviewCard {
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  max-height: 400px;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  justify-items: stretch;
+  /* box-shadow: 0px 0px 30px hsl(27, 5%, 40%); */
+  display: grid;
+  grid-template-columns: 40px 360px 150px;
+  grid-template-rows: 50px 50px auto 50px;
+  grid-template-areas:
+  "postedBy postedBy postedBy"
+  "vote revTitle revTitle"
+  "vote revBody revImg"
+  "vote comms revImg";
+}
+
+#postedBy {
+  grid-area: postedBy;
+  border-radius: 5px 5px 0 0;
+  align-items: center;
+  background-color: #8f8f8f;
+  text-align: start;
+  justify-items: stretch;
+  color: rgb(19, 19, 19);
+  font-size: 15px;
+  margin: 0px;
+  padding-left: 15px;
+}
+
+#vote {
+  background-color: #ffffff;
+  border-radius: 0 0 0 5px;
+  grid-area: vote;
+  max-width: 50px;
+}
+
+#vote button {
+  background-color: #ffffff;
+  font-weight: bold;
+  border: none;
+  padding-top: 10px;
+}
+
+#vote button img {
+  max-width: 30px;
+}
+#vote button img:hover {
+  transform: scale(1.5);
+}
+
+#revTitle {
+  grid-area: revTitle;
+  font-size: large;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.singleReview {
+  background-color: #dbdddf;
+}
+
+#revBody {
+  max-height: 300px;
+  grid-area: revBody;
+  text-align: left;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+
+#revImg {
+  grid-area: revImg;
+  padding: 5px;
+}
+
+#revImg img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 100%;
+}
+
+#comms {
+  background-color: #ffffff;
+  grid-area: comms;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding-left: 5px;
+}
+
+
+.form {
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form label {
+  background-color: rgb(207, 165, 24);
+  padding: 10px;
+  width: 530px;
+  border-radius: 5px 5px 0 0;
+}
+
+#newComment {
+  background-color: #ffffff;
+  border: none;
+  width: 530px;
+  height: 150px;
+  padding: 10px;
+  justify-content: flex-start;
+  font-size: large;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#button {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #f1f1ee;
+  border: none;
+}
+
+.commentCard {
+  margin: 20px auto;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: stretch;
+  background-color: #cac7c2;
+  display: grid;
+  grid-template-columns: 50px 100px 250px;
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+  "avatar author author"
+  "commBody commBody commBody"
+  "commVotes commVotes delete";
+}
+
+#author {
+  grid-area: author;
+  border-radius: 0 5px 0 0;
+  background-color: #a8793b;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+}
+
+#avatar {
+  border-radius: 5px 0 0 0;
+  background-color: #a8793b;
+  grid-area: avatar;
+  padding: 10px;
+}
+
+#avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#commBody {
+  width: 100%;
+  grid-area: commBody;
+  text-align: left;
+  padding:10px;
+  color: rgb(0, 0, 0);
+}
+
+#commVotes {
+  align-items: center;
+  border-radius: 0 0 0 5px;
+  grid-area: commVotes;
+  text-align: left;
+  padding-left: 10px;
+  display: flex;
+  color: rgb(0, 0, 0);
+}
+
+#commVotes button {
+  background-color: #cac7c2;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  padding-left: 10px;
+}
+
+#commVotes button img {
+  background-color: #cac7c2;
+  max-width: 30px;
+}
+
+.delete {
+  grid-area: delete;
+  color: #000000;
+  text-align: left;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+}
+.delete p {
+  color: #000000;
+  font-size: normal;
+  padding-right: 10px;
+  font-weight: bold;
+}
+.delete p:hover {
+  color: #960707;
+}
+
+
+
+
+
+
+
+
+
+/* ---------------------------------WIDE SCREEN---------------------------------------------- */
+@media only screen and (min-width: 600px) {
 .reviewCard {
   margin: 20px auto;
   max-width: 800px;
@@ -247,7 +486,7 @@ main {
   grid-area: postedBy;
   border-radius: 5px 5px 0 0;
   align-items: center;
-  background-color: #8f8f8f;
+  background-color: #b9b9b9;
   text-align: start;
   justify-items: stretch;
   color: rgb(19, 19, 19);
@@ -298,7 +537,7 @@ main {
 }
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: 15px;
 }
 
 /* Track */
@@ -308,7 +547,7 @@ main {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2a797c; 
+  background: #a2a34b; 
 }
 
 
@@ -358,13 +597,15 @@ main {
 .form {
   color: rgb(255, 255, 255);
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   align-items: center;
 }
 .form label {
-  background-color: rgb(95, 95, 94);
+  background-color: rgb(207, 165, 24);
   width: 780px;
   padding: 10px;
+  border-radius: 5px 5px 0 0;
 }
 
 #newComment {
@@ -375,6 +616,7 @@ main {
   padding: 10px;
   justify-content: flex-start;
   font-size: large;
+  border-radius: 5px;
   margin-bottom: 10px;
 }
 
@@ -394,9 +636,9 @@ main {
   border-radius: 5px;
   justify-content: center;
   align-items: stretch;
-  background-color: #cac7c2;
+  background-color: #ffffff;
   display: grid;
-  grid-template-columns: 50px 150px 600px;
+  grid-template-columns: 50px 60px 690px;
   grid-template-rows: 50px auto 50px;
   grid-template-areas:
   "avatar author author"
@@ -407,7 +649,7 @@ main {
 #author {
   grid-area: author;
   border-radius: 0 5px 0 0;
-  background-color: #a8793b;
+  background-color: #b6cfd3;
   color: rgb(0, 0, 0);
   font-size: 15px;
   max-width: 800px;
@@ -418,7 +660,7 @@ main {
 
 #avatar {
   border-radius: 5px 0 0 0;
-  background-color: #a8793b;
+  background-color: #b6cfd3;
   grid-area: avatar;
   padding: 10px;
 }
@@ -448,7 +690,7 @@ main {
 }
 
 #commVotes button {
-  background-color: #cac7c2;
+  background-color: #ffffff;
   text-align: center;
   font-weight: bold;
   border: none;
@@ -456,31 +698,29 @@ main {
 }
 
 #commVotes button img {
-  background-color: #cac7c2;
+  background-color: #ffffff;
   max-width: 30px;
 }
 
 .delete {
   grid-area: delete;
-  border-radius: 0 0 5px 0;
-  color: #1a494b;
+  color: #000000;
   text-align: left;
   align-items: stretch;
   display: flex;
   flex-direction: row;
 }
-.delete button {
-  width: 200px;
-}
 .delete p {
-  color: white;
-  align-items: center;
-  align-content: center;
-  font-size: small;
+  color: #000000;
+  font-size: normal;
+  padding-right: 10px;
+  font-weight: bold;
+}
+.delete p:hover {
+  color: #960707;
 }
 
 .userSection {
-  background-color: white;
   color: rgb(5, 5, 5);
   width: 100%;
   align-content: center;
@@ -497,7 +737,7 @@ main {
 .avatar {
   grid-area: avatar;
   padding: 20px;
-  background-color: rgb(255, 255, 255);
+  text-align: right;
 }
 .avatar img {
   width: 250px;
@@ -510,4 +750,5 @@ main {
   grid-area: info;
   padding: 20px;
   text-align: left;
+}
 }

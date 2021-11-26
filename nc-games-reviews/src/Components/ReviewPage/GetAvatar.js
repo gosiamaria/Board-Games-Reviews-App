@@ -1,5 +1,5 @@
 
-import { getUserByUsername } from "../utils/api";
+import { getUserByUsername } from '../../utils/api';
 import { useState, useEffect } from "react";
 
 export default function GetAvatar({username}) {

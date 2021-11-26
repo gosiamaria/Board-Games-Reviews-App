@@ -1,7 +1,9 @@
 import AddVotes from "./AddVotes";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function ReviewCard({ review }) {
+    const { params } = useParams();
     return (
         <section className="reviewCard">
             <div id="postedBy">
@@ -9,7 +11,7 @@ export default function ReviewCard({ review }) {
                 {review.created_at.slice(0,10)} {' '} {' '} at{' '} {review.created_at.slice(11,16)}</p>
             </div>
             <div id="revTitle">
-            <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><p>{review.title}</p></Link>
+            {(params) ? <p>{review.title}</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><p>{review.title}</p></Link>}
             </div>
             <div id="revBody">
                 <p>{review.review_body}</p>
@@ -19,7 +21,7 @@ export default function ReviewCard({ review }) {
             </div>
 
             <div id="comms">
-                <Link to={`/reviews/${review.review_id}`} className="singleReviewLink">   {review.comment_count} comments </Link>
+            {(params) ? <p>{review.comment_count} comments</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink">   {review.comment_count} comments </Link>}    
             </div>
 
             <div id="vote">

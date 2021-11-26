@@ -1,5 +1,5 @@
-import About from "./About";
-import { getAllReviews } from "../utils/api";
+import About from "../About";
+import { getAllReviews } from "../../utils/api";
 import { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 import { useParams } from "react-router-dom";
@@ -9,6 +9,7 @@ export default function Reviews() {
   const [isLoading, setIsLoading] = useState(true);
   const numArr = [5, 10, 20, 50];
   const [reviews, setReviews] = useState([]);
+  const [err, setErr] = useState(null);
   const [query, setQuery] = useState({
     sort: 'created_at',
     order: 'desc',
@@ -18,11 +19,20 @@ export default function Reviews() {
 
   useEffect(() => {
     setIsLoading(true);
+    setErr(null);
     getAllReviews(query, slug).then((reviews) => {
       setReviews(reviews);
       setIsLoading(false);
-    });
-  },[query]);
+      setErr(null);
+    }).catch((err) => {
+      setIsLoading(false);
+      if(err.response.status === 404) {
+        setErr("Category does not exist");
+      } else {
+        setErr("Something has gone wrong!");
+      }
+    })
+  },[query, slug]);
   
   const handleSortby = (e) => {
     e.preventDefault();
@@ -52,8 +62,9 @@ export default function Reviews() {
 }
 
   if (isLoading) {
-    return <p>...loading</p>;
+    return <p><img id="loading" src="https://i.pinimg.com/originals/58/e4/a4/58e4a4e4fa041a11f796a2014b1bcfa4.gif" alt="loading"/></p>
   }
+  if(err) return <p>{err}</p>;
   
   return (
     <section className="main">
@@ -99,7 +110,12 @@ export default function Reviews() {
           {numArr.map((num) => {
             return <option key={num} value={num}>{num}</option>
           })}
-        </select>
+          <option key="view all"
+            value={100000}
+          >
+            View all
+          </option>
+          </select>
 
 
       </div>

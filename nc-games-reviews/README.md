@@ -1,12 +1,12 @@
-# Northcoders Boardgames Review Board
+# Boardgames Review Board 🎲 
 
-## YOU CAN FIND MY HOSTED VERION HERE: 
+## CHECK OUT THE HOSTED APP ON:
 
 ### https://boardgames-reviews-app.netlify.app
 
 ---
 
-## Hosted Version of the API can be accessed in the link below:
+## Access to the API:
 
 https://nc-games-by-gosia.herokuapp.com/api
 

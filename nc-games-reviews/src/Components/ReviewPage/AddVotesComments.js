@@ -5,7 +5,6 @@ import downYellow from "../images/down-yellow.png";
 import { UserContext } from "../../context/UserContext";
 
 export default function AddVotesComments({ votes, comment_id, commentAuthor}){
-    console.log(commentAuthor, ' comment author')
     const [addedVotes, setAddedVotes] = useState(0);
     const [isError, setIsError] = useState(false);
     const { currentUser } = useContext(UserContext);

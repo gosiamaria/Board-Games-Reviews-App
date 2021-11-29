@@ -41,10 +41,8 @@ export default function Reviews() {
     const val = JSON.parse(e.target.value);
     setQuery((prevQuery) => {
       let newQuery = {...prevQuery}
-      console.log(val)
       newQuery.sort = val.sort;
       newQuery.order = val.order;
-      console.log(newQuery, 'new query')
       return newQuery;
   })
 }

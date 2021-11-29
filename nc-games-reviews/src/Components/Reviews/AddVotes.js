@@ -10,9 +10,6 @@ export default function AddVotes({ votes, reviewId, reviewOwner }){
     const [msg, setMsg] = useState('');
     const { currentUser } = useContext(UserContext);
 
-console.log(currentUser.username, '--- currentUser')
-console.log(reviewOwner, '--- reviewOwner')
-
     const handleClickInc = () => {
         setAddedVotes((prevVotes) => prevVotes + 1);
         patchVotes(reviewId, 1).catch(() => {

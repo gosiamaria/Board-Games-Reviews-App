@@ -2,7 +2,7 @@
 
 ## YOU CAN FIND MY HOSTED VERION HERE: 
 
-### https://61a0fa9dd120a423e80a2145--boardgames-reviews-app.netlify.app/
+### https://boardgames-reviews-app.netlify.app
 
 ---
 

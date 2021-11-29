@@ -11,7 +11,7 @@ export default function ReviewCard({ review }) {
                 {review.created_at.slice(0,10)} {' '} {' '} at{' '} {review.created_at.slice(11,16)}</span>
             </div>
             <div id="revTitle">
-            {(params) ? <p>{review.title.toUpperCase()}</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><p>{review.title.toUpperCase()}</p></Link>}
+            {(params) ? <span>{review.title.toUpperCase()}</span> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><span>{review.title.toUpperCase()}</span></Link>}
             </div>
             <div id="revBody">
             <img src={review.review_img_url} alt={review.title} />

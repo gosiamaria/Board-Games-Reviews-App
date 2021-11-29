@@ -9,16 +9,6 @@ export default function CommentCard({ comment }) {
     const { currentUser } = useContext(UserContext);
     const [deleteConfirmation, setDeleteConfirmation ] = useState("")
 
-    // const handleDelete = (e) => {
-    //     e.preventDefault();
-    //     deleteComment(comment.comment_id).then(() => {
-    //         setDeleteConfirmation("Your comment has been deleted. Promise it ain't gonna be there when you refresh the page.");
-    //         setComments((prevComments) => {
-    //             let newComments = [...prevComments];
-    //             return newComments.filter(com => com.comment_id !== comment.comment_id);
-    //         })
-    //     })
-    // }
 
     return (
         <section className="commentCard">
@@ -30,12 +20,8 @@ export default function CommentCard({ comment }) {
                 <span>{comment.body}</span>
             </div>
             <div id="commVotes">
-                <AddVotesComments votes={comment.votes} comment_id={comment.comment_id} />
+                <AddVotesComments votes={comment.votes} comment_id={comment.comment_id} commentAuthor={comment.author}/>
             </div>
-            {/* <div className="delete">
-            {comment.author === currentUser.username ? <span onClick={handleDelete}>Delete</span> : <span></span>}
-            </div>
-            <span>{deleteConfirmation}</span> */}
         </section>
     )
 }

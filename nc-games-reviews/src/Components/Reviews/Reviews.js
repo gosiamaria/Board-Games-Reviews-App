@@ -9,7 +9,7 @@ import arrowLeft from "../images/arrowLeft.png";
 export default function Reviews() {
   const { slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const numArr = [5, 10, 20, 50];
+  const numArr = [10, 20, 50];
   const [reviews, setReviews] = useState([]);
   const [err, setErr] = useState(null);
   const [query, setQuery] = useState({
@@ -38,18 +38,13 @@ export default function Reviews() {
   
   const handleSortby = (e) => {
     e.preventDefault();
+    const val = JSON.parse(e.target.value);
     setQuery((prevQuery) => {
       let newQuery = {...prevQuery}
-      newQuery.sort = e.target.value;
-      return newQuery;
-  })
-}
-
-  const handleOrder = (e) => {
-    e.preventDefault();
-    setQuery((prevQuery) => {
-      let newQuery = {...prevQuery}
-      newQuery.order = e.target.value;
+      console.log(val)
+      newQuery.sort = val.sort;
+      newQuery.order = val.order;
+      console.log(newQuery, 'new query')
       return newQuery;
   })
 }
@@ -68,59 +63,33 @@ export default function Reviews() {
   }
   if(err) return <p>{err}</p>;
 
-  console.log(reviews.length, ' length of reviews')
-
   return (
     <section className="main">
       <About slug={slug} />
       <div className="sortBy">
+        <div className="sort">
+        <h5>Sort by</h5>
         <select className="sortByOptions" onChange={handleSortby}>
-          <option
-            key="sortByOptions selector"
-            value="sortByOptions selector"
-            defaultValue="sortByOptions"
-            disabled
-            selected
-          >
-            Sort by
-          </option>
-          <option key="created_at" value="created_at">date</option>
-          <option key="title" value="title">title</option>
-          <option key="votes" value="votes">votes</option>
+          <option key="created_at_desc" value='{"sort":"created_at","order":"desc"}'>Newest first</option>
+          <option key="created_at_asc" value='{"sort":"created_at","order":"asc"}'>Older first</option>
+          <option key="title_asc" value='{"sort":"title","order":"asc"}'>Title: alphabetically</option>
+          <option key="title_asc" value='{"sort":"votes","order":"asc"}'>Least voted </option>
+          <option key="title_asc" value='{"sort":"votes","order":"desc"}'>Most voted </option>
         </select>
-
-        <select className="orderOptions" onChange={handleOrder}>
-        <option key="orderOptions selector"
-            value="orderOptions selector"
-            defaultValue="orderOptions"
-            disabled
-            selected
-          >
-            Order by
-          </option>
-          <option key="asc" value="asc">Ascending</option>
-          <option key="desc" value="desc">Descending</option>
-        </select>
-
-        <select className="itemsPerPage" onChange={handleItemsPerPage}>
-        <option key="itemsPerPage selector"
-            value="itemsPerPage selector"
-            defaultValue="itemsPerPage"
-            disabled
-            selected
-          >
-            Items per page
-          </option>
-          {numArr.map((num) => {
-            return <option key={num} value={num}>{num}</option>
-          })}
-          <option key="view all"
-            value={100000}
-          >
-            View all
-          </option>
+      </div>
+      <div className="items">
+        <h5>Items per page</h5>
+          <select className="itemsPerPage" onChange={handleItemsPerPage}>
+            {numArr.map((num) => {
+              return <option key={num} value={num}>{num}</option>
+            })}
+            <option key="view all"
+              value={100000}
+            >
+              View all
+            </option>
           </select>
-
+      </div>
 
       </div>
         <div className="display">
@@ -130,7 +99,6 @@ export default function Reviews() {
             return <ReviewCard review={review} />
           })}
           </div>
-          {/* {reviews.length > query.limit} */}
     </section>
     )
 }

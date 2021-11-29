@@ -154,7 +154,7 @@
 }
 @media only screen and (min-width: 1300px) {
   .userCorner {
-    font-size:120%;
+    font-size:100%;
   }
   .userCorner img {
   width: 50px;
@@ -252,7 +252,7 @@ header {
     height: 60px;
     width: 300px;
     padding: 10px;
-    font-size: 120%;
+    font-size: 100%;
   }
 }
 
@@ -298,10 +298,33 @@ header {
 }
 /* 🙂 ------------------------------SORT BY----------------------------------- 🙂*/
 .sortBy {
+  margin: 10px auto 10px auto;
   grid-area: sortBy;
-  width: 100%;
+  min-width: 300px;
   background-color: rgb(34, 33, 33);
   margin-bottom: 15px;
+  justify-content: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 20px 50px;
+  grid-template-areas:
+  "sortTitle itemsTitle"
+  "sort items";
+}
+.sort h5 {
+  grid-area: sortTitle;
+  margin: 5px 0px 5px 0px;
+}
+.items h5 {
+  grid-area: itemsTitle;
+  margin: 5px 0px 5px 0px;
+}
+.sortByOptions {
+  grid-area: sort;
+}
+.itemsPerPage {
+  grid-area: items;
 }
 .sortBy select {
   font-family: 'Work Sans', sans-serif;
@@ -310,10 +333,10 @@ header {
   box-shadow: 0px 5px 26px 5px #000000;
   border: 1px rgb(0, 255, 213) solid;
   border-radius: 2px;
+  height: min-content;
   text-align: center;
-  padding:10px;
+  padding:5px;
   font-size: small;
-  margin: 20px 5px 20px 5px;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -322,27 +345,32 @@ header {
   background-color: #31312d;
 }
 .sortByOptions {
-  width: 70px;
-}
-.orderOptions {
-  width: 80px;
+  width: 100px;
 }
 .itemsPerPage{
-  width: 120px;
+  width: 100px;
 }
 @media only screen and (min-width: 1300px) {
+  .sort h5 {
+    font-size: 100%;
+    margin: 5px 0px 0px 0px;
+  }
+  .items h5 {
+    font-size: 100%;
+    margin: 5px 0px 0px 0px;
+  }
   .sortBy select {
-    font-size: 120%;
+    font-size: 100%;
     margin: 20px 10px 20px 10px;
   }
   .sortByOptions {
     width: 120px;
+    margin-bottom: 30px;
   }
-  .orderOptions {
-    width: 130px;
-  }
+
   .itemsPerPage{
-    width: 200px;
+    width: 120px;
+    margin-bottom: 30px;
   }
 }
 
@@ -369,7 +397,6 @@ header {
   align-items: center;
   text-align: center;
 }
-
 
 
 /* ------------------------------------REVIEWS -------------------------------- */
@@ -446,7 +473,7 @@ header {
   align-items: start;
   background-color: rgb(34, 33, 33);
   grid-area: vote;
-  color: rgb(255, 79, 9);
+  color: rgb(255, 230, 0);
   font-weight: bold;
 }
 
@@ -549,6 +576,21 @@ header {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+@media only screen and (min-width: 800px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 /* 🙂 ------------------------------.REVIEW PAGE ------------------------------------- 🙂*/
 .singleReview {
@@ -755,7 +797,7 @@ header {
   align-items: center;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  color: rgb(255, 79, 9);
+  color: rgb(0, 255, 213);
   font-size: small;
   grid-area: commVotes;
   padding-left: 10px;
@@ -777,7 +819,7 @@ header {
   align-items: middle;
   font-weight: bold;
   grid-area: delete;
-  color: rgb(255, 79, 9);
+  color: rgb(139, 44, 7);
   text-align: center;
 }
 
@@ -788,15 +830,15 @@ header {
   text-align: center;
   font-family: 'Work Sans', sans-serif;
   letter-spacing: 1px;
-  width: 120px;
+  width: 100px;
   font-weight: bold;
   font-size: small;
   background-color: rgb(34, 33, 33);
-  color: rgb(255, 79, 9);
+  color: rgb(255, 136, 38);
   box-shadow: 0px 5px 26px 5px #000000;
-  border: 1px rgb(255, 79, 9)solid;
+  border: 1px rgb(255, 136, 38) solid;
   border-radius: 2px;
-  padding:8px;
+  padding:4px;
 }
 @media only screen and (min-width: 1300px) {
   .delete button {

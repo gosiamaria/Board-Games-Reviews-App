@@ -392,8 +392,8 @@ header {
   height: 10px;
 }
 #loading {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   align-items: center;
   text-align: center;
 }

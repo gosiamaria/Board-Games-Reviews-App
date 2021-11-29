@@ -28,7 +28,7 @@ export default function UserPage(props) {
     }, [username])
 
     if (isLoading) {
-        return <p><img id="loading" src="https://www.providentinsurance.co.uk/Static/images/loader.gif" alt="loading"/></p>
+        return <p><img id="loading" src="https://www.teahub.io/photos/full/226-2267889_animated-circle-gif-transparent.gif" alt="loading"/></p>
     }
 
     if(err) return <p>{err}</p>;

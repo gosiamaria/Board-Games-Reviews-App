@@ -3,6 +3,8 @@ import { getReviewById } from "../../utils/api";
 import { useParams } from "react-router-dom";
 import ReviewCard from "../Reviews/ReviewCard";
 import Comments from "./Comments";
+import arrowLeft from "../images/arrowLeft.png";
+import { Link } from "react-router-dom";
 
 export default function Review() {
     const { review_id } = useParams();
@@ -29,7 +31,11 @@ export default function Review() {
 
     return (
         <div className="singleReview">
+            <Link to="/" className="goBackLink">
+            <span className="goBack"><img src={arrowLeft} alt="back arrow" /> Back to all reviews</span></Link>
+            <div className="oneReview">
             <ReviewCard review={review} />
+            </div>
             <Comments review_id={review.review_id} />
         </div>
     )

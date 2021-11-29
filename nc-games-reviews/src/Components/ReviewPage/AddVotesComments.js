@@ -1,5 +1,7 @@
 import { patchVotesComments } from '../../utils/api';
 import { useState } from "react";
+import upYellow from "../images/up-yellow.png";
+import downYellow from "../images/down-yellow.png";
 
 export default function AddVotesComments({ votes, comment_id}){
     const [addedVotes, setAddedVotes] = useState(0);
@@ -23,9 +25,9 @@ export default function AddVotesComments({ votes, comment_id}){
 
     return (
         <>
-        <img onClick={handleClickInc} className="votes-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Sort_up_font_awesome.svg/1024px-Sort_up_font_awesome.svg.png" alt="buttonUp" />
+        <img onClick={handleClickInc} className="votes-button" src={upYellow} alt="buttonUp" />
         <p>{votes + addedVotes}</p>
-        <img onClick={handleClickDec} className="votes-button" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Sort_down_font_awesome.svg/1024px-Sort_down_font_awesome.svg.png" alt="buttonDown" />
+        <img onClick={handleClickDec} className="votes-button" src={downYellow} alt="buttonDown" />
         {isError ? <p>Oops, something went wrong.</p> : null}
         </>
     )

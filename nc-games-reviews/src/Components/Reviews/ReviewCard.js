@@ -7,25 +7,24 @@ export default function ReviewCard({ review }) {
     return (
         <section className="reviewCard">
             <div id="postedBy">
-                <p> Posted by:<Link to={`/users/${review.owner}`} className="userLink"> {review.owner} </Link> {' '}• {' '}
-                {review.created_at.slice(0,10)} {' '} {' '} at{' '} {review.created_at.slice(11,16)}</p>
+                <span>posted by<Link to={`/users/${review.owner}`} className="userLink"> {review.owner} </Link> {' '}• {' '}
+                {review.created_at.slice(0,10)} {' '} {' '} at{' '} {review.created_at.slice(11,16)}</span>
             </div>
             <div id="revTitle">
-            {(params) ? <p>{review.title}</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><p>{review.title}</p></Link>}
+            {(params) ? <p>{review.title.toUpperCase()}</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink"><p>{review.title.toUpperCase()}</p></Link>}
             </div>
             <div id="revBody">
-                <p>{review.review_body}</p>
-            </div>
-            <div id="revImg">
-                <img src={review.review_img_url} alt={review.title} />
+            <img src={review.review_img_url} alt={review.title} />
+                <span>{review.review_body}</span>
+
             </div>
 
             <div id="comms">
-            {(params) ? <p>{review.comment_count} comments</p> : <Link to={`/reviews/${review.review_id}`} className="singleReviewLink">   {review.comment_count} comments </Link>}    
+            {(params) ? <p>{review.comment_count} comments</p> : <Link to={`/reviews/${review.review_id}`} className="commentsLink"> View all {review.comment_count} comments </Link>}    
             </div>
 
             <div id="vote">
-                <AddVotes votes={review.votes} reviewId={review.review_id} />
+                <AddVotes votes={review.votes} reviewId={review.review_id} reviewOwner={review.owner} />
             </div>
         </section>
     )

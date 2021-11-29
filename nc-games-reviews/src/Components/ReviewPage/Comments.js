@@ -5,6 +5,7 @@ import CommentCard from "./CommentCard";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { deleteComment } from '../../utils/api';
 
 export default function Comments({review_id}){
     const [comments, setComments] = useState([]);
@@ -12,6 +13,7 @@ export default function Comments({review_id}){
     const [commentToAdd, setCommentToAdd] = useState('');
     const [ confirmation, setConfirmation ] = useState([]);
     const { currentUser } = useContext(UserContext);
+    const [deleteConfirmation, setDeleteConfirmation ] = useState("")
 
     useEffect(() => {
         setIsLoading(true);
@@ -35,12 +37,25 @@ export default function Comments({review_id}){
         })
     }
 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        const commentId = e.target.value;
+        deleteComment(commentId).then(() => {
+            setDeleteConfirmation("Your comment has been deleted. Promise it ain't gonna be there when you refresh the page.");
+            setComments((prevComments) => {
+                return prevComments.filter((comment) => {
+                    return comment.comment_id != commentId;
+                })
+            })
+        })
+    }
+
     return(
         <>
         <div className="commentForm">
             <form onSubmit={handleSubmit}>
                 <div id="label">
-                <label htmlFor="newComment">Comment as <Link to={`/users/${currentUser.username}`} className="userLink">{currentUser.username}</Link></label>
+                <label htmlFor="newComment">comment as <Link to={`/users/${currentUser.username}`} className="userLink">{currentUser.username}</Link></label>
                 </div>
                 <div>
                 <input 
@@ -57,9 +72,16 @@ export default function Comments({review_id}){
                 <p></p>
             </form>
         </div>
-        <div className="display">
+        <div className="comments">
             {comments.map((comment) => {
-                return <CommentCard comment={comment} />
+                return (
+                <>
+                <CommentCard comment={comment} />
+                <div className="delete">
+                    {comment.author === currentUser.username ? <button value={comment.comment_id} onClick={handleDelete}>Delete</button> : <span></span>}
+                </div>
+                </>
+                )
             })}
         </div>
         </>

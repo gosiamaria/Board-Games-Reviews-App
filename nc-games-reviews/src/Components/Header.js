@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "./images/logo.png"
+import logo from "./images/logo2.png"
 
 export default function App() {
   return (
@@ -7,7 +7,7 @@ export default function App() {
         <Link to="/" className="title-link">
         <div>
       <img src={logo} alt="logo" />
-        <h1>BOARD GAMES REVIEWS</h1>
+        <h1>Board games reviews</h1>
         </div>
         </Link>
     </header>

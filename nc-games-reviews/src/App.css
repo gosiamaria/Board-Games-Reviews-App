@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&family=Fredoka+One&family=Roboto+Slab:wght@300&family=Secular+One&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Unica+One&family=Work+Sans:wght@200&display=swap');
 
 .App {
-  margin: 0px;
-  padding:0px;
+  margin: -8px;
+  padding: 5px;
+  color: white;
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(247, 243, 243);
-  font-family: 'Roboto Slab', serif;
+  background-color: rgb(34, 33, 33);
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 100%;
@@ -28,20 +28,23 @@
 /* 🙂 -------------------------------LOGIN----------------------------------- 🙂*/
 .login {
   text-align: center;
-  grid-area: sortBy;
+  grid-area: display;
   height: 300px;
 }
 .userOptions {
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: 1px;
     height: 50px;
-    width: 160px;
-    border-radius: 50px;
+    width: 140px;
     padding: 10px;
-    margin: 2px;
-    background-color: #000000;
-    color: white;
+    margin: 5px;
+    border: 1px rgb(0, 255, 213)  solid;
+    border-radius: 3px;
+    background-color: rgb(34, 33, 33);
+    box-shadow: 0px 5px 26px 5px #000000;
+    color: rgb(0, 255, 213) ;
     justify-items: center;
     align-items: center;
-    border: none;
     font-weight: bold;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -51,126 +54,217 @@
   background-color: #31312d;
 }
 .login button {
-  background-color: #000000;
-  color: white;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  background-color: rgb(34, 33, 33);
+  box-shadow: 0px 5px 26px 5px #000000;
+  color: rgb(0, 255, 213) ;
+  border-radius: 3px;
   border: none;
   font-weight: bold;
-  border-radius: 50px;
+  border: 1px rgb(0, 255, 213) solid;
   height: 50px;
-  width: 160px;
+  width: 140px;
   padding:10px;
-  margin: 2px;
+  margin: 5px;
 }
 .login button:hover {
   background-color: #31312d;
+}
+
+@media only screen and (min-width: 600px) {
+  .userOptions {
+    height: 80px;
+    width: 200px;
+    font-size: large;
+    margin: 10px;
+  }
+  .login button {
+    height: 80px;
+    width: 200px;
+    font-size: large;
+    margin: 10px;
+  }
 }
 
 /* 🙂 -------------------------------USER CORNER----------------------------------- 🙂*/
 
 .userCorner {
   grid-area: userCorner;
-  background-color: #cfa74f;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  background-color: rgb(34, 33, 33);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-content: space-around;
   align-items: center;
   font-size: small;
-  color: white;
+  margin-bottom: 10px;
+  color: rgb(0, 255, 213);
   padding-right: 10px;
   font-weight: bold;
 }
 .userLink {
-  color: rgb(43, 95, 86);
+  color: rgb(185, 98, 57);
   text-decoration: none;
 }
 .userLink:hover {
-  color: rgb(2, 8, 7);
+  color: rgb(139, 88, 54);
   text-decoration: none;
 }
 .userLink:active {
-  color: rgb(43, 95, 86);
+  color: rgb(185, 98, 57);
   text-decoration: none;
 }
 .userCorner img {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin: 5px;
 }
 .userCorner button {
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  width: 75px;
+  height: 30px;
   font-weight: bold;
-  width: 80px;
-  border: none;
-  border-radius: 40px;
-  padding:8px;
+  font-size: small;
+  background-color: rgb(34, 33, 33);
+  color: rgb(0, 255, 213);
+  box-shadow: 0px 5px 26px 5px #000000;
+  border: 1px rgb(0, 255, 213) solid;
+  border-radius: 2px;
+  padding:5px;
+}
+
+@media only screen and (min-width: 600px) {
+  .userCorner {
+    font-size:large;
+  }
+  .userCorner img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  }
+  .userCorner button {
+    width: 100px;
+    height: 40px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .userCorner {
+    font-size:120%;
+  }
+  .userCorner img {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  }
+  .userCorner button {
+    width: 200px;
+    height: 50px;
+    font-size:100%;
+  }
 }
 /* 🙂 ------------------------------HEADER----------------------------------- 🙂*/
 header {
   grid-area: title;
   width: 100%;
-  background-color: #cfa74f;
+  background-color: rgb(34, 33, 33);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-family: 'Benne', serif;
+  color: rgb(0, 255, 213);
+  font-family: 'Unica One', cursive;
+  letter-spacing: 2px;
   font-size: large;
   font-weight: normal;
 }
 .title-link h1{
-  text-align: center;
+  text-align: left;
+  padding-left: 10px;
+  margin: 20px 0px 10px 0px;
 }
 .title-link img {
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
 }
 .title-link {
-  color: rgb(43, 95, 86);
+  color: rgb(0, 255, 213);
   text-decoration: none;
 }
 .title-link:hover {
-  color: rgb(2, 8, 7);
+  color: rgb(255, 217, 0);
   text-decoration: none;
 }
 .title-link:active {
-  color: rgb(43, 95, 86);
+  color: rgb(0, 255, 213);
   text-decoration: none;
 }
 
+@media only screen and (min-width: 600px) {
+  header {
+    font-size: 125%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  header {
+    font-size: 200%;
+  }
+  .title-link img {
+    width: 300px;
+    height: 300px;
+  }
+}
 /* 🙂 ------------------------------N-A-V----------------------------------- 🙂*/
 .nav {
   grid-area: nav;
-  background-color: #cfa74f;
+  background-color: rgb(34, 33, 33);
   height: 60px;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin-bottom: 15px;
 }
 .nav select {
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
   height: 40px;
   width: 200px;
-  border-radius: 30px;
   padding: 8px;
-  background-color: #ad9c3c;
-  border: none;
   font-weight: bold;
+  background-color: rgb(34, 33, 33);
+  color: rgb(255, 230, 0);
+  border: 1px rgb(255, 230, 0) solid;
+  border-radius: 2px;
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 .nav select:hover {
-  background-color: rgb(184, 219, 216);
+  background-color: #31312d;
+}
+
+@media only screen and (min-width: 1300px) {
+  .nav select {
+    height: 60px;
+    width: 300px;
+    padding: 10px;
+    font-size: 120%;
+  }
 }
 
 /* 🙂 ------------------------------ABOUT----------------------------------- 🙂*/
 .about {
   grid-area: about;
-  width: 100%;
-  background-color: #dbdddf;
+  background-color: rgb(34, 33, 33);
+  font-family: 'Work Sans', sans-serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  padding: 0px 10px 0px 10px;
   justify-items: center;
-  font-family: 'Benne', serif;
   display: grid;
   grid-template-rows: min-content min-content;
   grid-template-areas:
@@ -178,41 +272,57 @@ header {
   "description";
 }
 .about h2 {
+  font-family: 'Unica One', cursive;
+  letter-spacing: 2px;
   grid-area: subtitle;
-  font-family: 'Benne', serif;
   padding:0 5px 0 5px;
+  margin: 10px 0px 5px 0px;
+  color: rgb(255, 255, 255);
 }
-.about p {
+.about span {
   grid-area: description;
-  padding:0 10px 0 10px;
+  letter-spacing: 1px;
+  margin:0px 0px 10px 0px;
+  color: rgb(255, 255, 255);
 }
-
+@media only screen and (min-width: 800px) {
+  .about {
+    padding: 0px 50px 0px 50px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .about {
+    padding: 0px 300px 0px 300px;
+    font-size: 120%;
+  }
+}
 /* 🙂 ------------------------------SORT BY----------------------------------- 🙂*/
 .sortBy {
   grid-area: sortBy;
   width: 100%;
-  background-color: #dbdddf;
+  background-color: rgb(34, 33, 33);
+  margin-bottom: 15px;
 }
 .sortBy select {
+  font-family: 'Work Sans', sans-serif;
+  background-color: rgb(34, 33, 33);
+  color: rgb(0, 255, 213);
+  box-shadow: 0px 5px 26px 5px #000000;
+  border: 1px rgb(0, 255, 213) solid;
+  border-radius: 2px;
   text-align: center;
   padding:10px;
   font-size: small;
-  border-radius: 20px;
-  border:none;
-  background-color: #a7ad6a;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 2px;
-  margin-right: 2px;
+  margin: 20px 5px 20px 5px;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 .sortBy select:hover {
-  background-color: rgb(184, 219, 216);
+  background-color: #31312d;
 }
 .sortByOptions {
-  width: 80px;
+  width: 70px;
 }
 .orderOptions {
   width: 80px;
@@ -220,56 +330,113 @@ header {
 .itemsPerPage{
   width: 120px;
 }
+@media only screen and (min-width: 1300px) {
+  .sortBy select {
+    font-size: 120%;
+    margin: 20px 10px 20px 10px;
+  }
+  .sortByOptions {
+    width: 120px;
+  }
+  .orderOptions {
+    width: 130px;
+  }
+  .itemsPerPage{
+    width: 200px;
+  }
+}
 
 /* 🙂 ---------------------------- ---DISPLAY-------------------------------- 🙂*/
 .display {
-  background-color: #dbdddf;
-  width: 100%;
+  background-color: rgb(34, 33, 33);
   justify-items: center;
+  align-items: center;
   grid-area: display;
   display: flex;
   flex-direction: column;
 }
-
+.backNow {
+  align-items: flex-start;
+  padding-left: 10px; 
+  text-align: left;
+}
+.backNow img {
+  height: 10px;
+}
 #loading {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   align-items: center;
   text-align: center;
 }
 
+
+
+/* ------------------------------------REVIEWS -------------------------------- */
+
+.reviews {
+  grid-area: display;
+  margin: 20px auto;
+  background-color: rgb(34, 33, 33);
+  display:flex;
+  flex-direction: column;
+  justify-items: center
+}
+.goBack {
+  padding-left: 10px; 
+  grid-area: goBack;
+  justify-items: start;
+  justify-content: start;
+  text-align: left;
+}
+
+
 /* 🙂 ------------------------------REVIEWCARD----------------------------------- 🙂*/
 .reviewCard {
-  margin: 20px auto;
-  background-color: #ffffff;
-  border-radius: 5px;
-  width: 350px;
-  height: 300px;
+  margin: 20px 10px 20px 10px;
+  background-color: rgb(34, 33, 33);
+  font-family: 'Work Sans', sans-serif;
+  color: white;
+  border-top: 1px rgb(255, 230, 0) solid;
+  box-shadow: 0px 5px 26px 5px #000000;
+  border-radius: 0px 0px 2px 2px;
+  padding: 5px;
+  min-width: 300px;
+  max-width: 500px;
   font-size: small;
   align-items: center;
   display: grid;
-  grid-template-columns: 20px 330px;
-  grid-template-rows:15px 60px 70px 130px 25px;
+  grid-template-columns: 30px minmax(270px 460px);
+  grid-template-rows:20px 40px 215px 25px;
   grid-template-areas:
   "postedBy postedBy"
   "vote revTitle"
-  "vote revImg"
   "vote revBody"
   "vote comms";
 }
+@media only screen and (min-width: 1000px) {
+  .reviewCard {
+  min-width: 700px;
+  font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .reviewCard {
+  min-width: 1000px;
+  font-size: 110%;
+  }
+}
 
 #postedBy {
+  margin: 0px;
   grid-area: postedBy;
+  letter-spacing: 1px;
   text-align: left;
   align-items: center;
-  width: 100%;
-  border-radius: 5px 5px 0 0;
-  background-color: #6ca5a5;
-  color: rgb(19, 19, 19);
+  background-color: rgb(34, 33, 33);
+  color: rgb(255, 230, 0);
   font-size: small;
-}
-postedBy p {
-  padding-left: 5px;
 }
 
 #vote {
@@ -277,14 +444,15 @@ postedBy p {
   text-align: center;
   justify-items: start;
   align-items: start;
-  background-color: #ffffff;
-  border-radius: 0 0 0 5px;
+  background-color: rgb(34, 33, 33);
   grid-area: vote;
+  color: rgb(255, 79, 9);
+  font-weight: bold;
 }
-
 
 #vote img {
   width: 15px;
+  height: 15px;
 }
 #vote img:hover {
   transform: scale(1.5);
@@ -292,20 +460,18 @@ postedBy p {
 
 #revTitle {
   font-size: small;
-  padding-left: 5px;
+  color: white;
   grid-area: revTitle;
   font-weight: bold;
   text-align: left;
-  justify-items: start
-}
-
-.singleReview {
-  grid-area: display;
-  background-color: #dbdddf;
+  justify-items: start;
+  padding: 10px 5px 10px 10px;
 }
 .singleReviewLink {
   font-weight: bold;
-  color: rgb(78, 172, 167);
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  color: white;
   text-decoration: none;
 }
 .singleReviewLink:hover {
@@ -313,673 +479,382 @@ postedBy p {
   text-decoration: none;
 }
 .singleReviewLink:active {
-  color: rgb(78, 172, 167);
+  color: white;
   text-decoration: none;
 }
 #revBody {
-  height: 100px;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
+  height: 200px;
   grid-area: revBody;
   text-align: left;
-  padding: 10px;
+  padding: 5px 5px 5px 10px;
   overflow-y: scroll;
 }
-#revImg {
-  grid-area: revImg;
-  padding: 5px;
-}
-#revImg img {
+
+#revBody img {
   border-radius: 5px;
+  margin: 0px 0px 5px 5px;
   object-fit: cover;
-  height: 70px;
+  width: 160px;
+  float: right;
 }
 #comms {
-  background-color: #ffffff;
+  background-color: rgb(34, 33, 33);
   grid-area: comms;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: left;
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+#msg {
+  grid-area: msg;
+}
+.commentsLink {
+  font-weight: bold;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  color: rgb(167, 164, 164);
+  text-decoration: none;
+}
+.commentsLink:hover {
+  color: rgb(129, 209, 196);
+  text-decoration: none;
+}
+.commentsLink:active {
+  color: rgb(167, 164, 164);
+  text-decoration: none;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
 }
 
-/* 🙂 ---------------------------------- FORM ------------------------------------------- 🙂*/
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(34, 33, 33);
+  border-radius: 50px;
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 255, 213);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/* 🙂 ------------------------------.REVIEW PAGE ------------------------------------- 🙂*/
+.singleReview {
+  grid-area: display;
+  margin: 20px auto;
+  background-color: rgb(34, 33, 33);
+  display:grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30px auto auto auto;
+  grid-template-areas:
+  "goBack"
+  "oneReview"
+  "form"
+  "comments";
+}
+
+.goBack {
+  padding-left: 10px; 
+  grid-area: goBack;
+  text-align: left;
+}
+.goBack img {
+  height: 10px;
+}
+.goBackLink {
+  text-align: left;
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 1px;
+  color: rgb(129, 209, 196);
+  text-decoration: none;
+}
+.goBackLink:hover {
+  color: rgb(44, 255, 220);
+  text-decoration: none;
+}
+.goBackLink:active {
+  color: rgb(129, 209, 196);
+  text-decoration: none;
+}
+
+
+/* -----------------------------------------------------------------------------------*/
+.oneReview {
+  grid-area: oneReview;
+}
+
+/* 🙂 -----------------------------------------FORM------------------------------------- 🙂*/
 .commentForm {
+  grid-area: form;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: bold;
   display: grid;
   justify-items: center;
   grid-template-columns: 100%;
-  grid-template-rows: min-content min-content 50px;
+  grid-template-rows: min-content min-content;
   grid-template-areas:
   "label"
-  "input"
-  "submit";
+  "input";
 } 
 .commentForm label {
   grid-area: label;
+  font-size: small;
 }
-.commentForm input {
-  grid-area: input;
-  background-color: #ffffff;
-  width: 330px;
-  height: 80px;
-  border: none;
-  padding: 10px;
-  justify-content: flex-start;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-#button {
-  grid-area: submit;
-  text-align: center;
+.commentForm input, textarea {
+  display : block;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  color: white;
   font-weight: bold;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 120px;
-  height: 35px;
-  border-radius: 20px;
-  background-color: #b3b31c;
+  grid-area: input;
+  background-color: #575757;
+  padding: 5px;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 100px;
   border: none;
-  color: #000000;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  resize  : none;
+  overflow: auto;
+}
+.commentForm input:focus, textarea:focus {
+  background   : rgba(0,0,0,.1);
 }
 
-/* 🙂 ---------------------------------- COMMENT CARD ------------------------------------------- 🙂*/
-.commentCard {
-  margin: 20px auto;
-  border-radius: 5px;
-  justify-content: center;
+#button {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  width: 120px;
+  font-weight: bold;
   font-size: small;
-  align-items: start;
-  background-color: #cac7c2;
+  background-color: rgb(34, 33, 33);
+  color: rgb(0, 255, 213);
+  box-shadow: 0px 5px 26px 5px #000000;
+  border: 1px rgb(0, 255, 213) solid;
+  border-radius: 2px;
+  padding:8px;
+}
+@media only screen and (min-width: 450px) {
+  .commentForm input, textarea {
+    min-width: 430px;
+    max-width: 700px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .commentForm input, textarea {
+    min-width: 500px;
+    max-width: 700px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .commentForm input, textarea {
+    min-width: 700px;
+    max-width: 950px;
+  }
+  .commentForm label {
+    grid-area: label;
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .commentForm input, textarea {
+    min-width: 1000px;
+    max-width: 1200px;
+  }
+  .commentForm label {
+    grid-area: label;
+    font-size: 110%;
+  }
+  #button {
+    width: 210px;
+    font-size: 110%;
+    padding:10px;
+  }
+}
+/* 🙂 --------------------------------- COMMENT CARD ----------------------------------- 🙂*/
+.comments {
+  grid-area: comments;
+  text-align: center;
+}
+
+.commentCard {
+  margin: 20px 10px 30px 10px;
+  border-radius: 0px 0px 2px 2px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: small;
+  color: white;
+  border-top: 2px rgb(0, 255, 213) solid;
+  box-shadow: 0px 5px 26px 5px #000000;
+  padding: 5px;
+  min-width: 300px;
+  max-width: 500px;
+  align-items: center;
+  background-color: rgb(34, 33, 33);
   display: grid;
-  grid-template-columns: 50px 100px 200px;
-  grid-template-rows: 50px auto 50px;
+  grid-template-columns: 40px minmax(60px 100px) minmax(200px 360px);
+  grid-template-rows: 40px auto 40px;
   grid-template-areas:
-  "avatar author author"
+  "author author author"
   "commBody commBody commBody"
   "commVotes commVotes delete";
 }
+@media only screen and (min-width: 1000px) {
+  .commentCard {
+    min-width: 700px;
+    font-size: 100%;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .commentCard {
+    min-width: 1000px;
+    font-size: 100%;
+  }
+}
+
 #author {
+  color: rgb(0, 255, 213);
   grid-area: author;
   font-size: small;
-  border-radius: 0 5px 0 0;
-  background-color: #a8793b;
-  color: rgb(0, 0, 0);
   text-align: left;
-  align-items: center;
-  width: 100%;
-  margin: 0;
+  align-items: start;
+  padding: 5px 0px 5px 0px;
 }
-#avatar {
-  border-radius: 5px 0 0 0;
-  background-color: #a8793b;
-  grid-area: avatar;
-  padding: 5px;
-}
-#avatar img {
+#author img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  margin-right: 5px;
 }
 
 #commBody {
   font-size: small;
+  max-height: 200px;
+  font-weight: bold;
   grid-area: commBody;
   text-align: left;
-  padding-left:10px;
-  padding-right:10px;
-  color: rgb(0, 0, 0);
+  padding: 10px 5px 5px 5px;
+  overflow-y: scroll;
 }
 #commVotes {
   align-items: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  color: rgb(255, 79, 9);
   font-size: small;
-  border-radius: 0 0 0 5px;
   grid-area: commVotes;
-  text-align: center;
   padding-left: 10px;
   display: flex;
-  color: rgb(0, 0, 0);
 }
 #commVotes img {
-  background-color: #cac7c2;
   text-align: center;
   font-weight: bold;
   border: none;
+  width: 15px;
+  height: 15px;
+  margin: 0px 10px 0px 10px;
 }
-#commVotes img {
-  background-color: #cac7c2;
-  max-width: 20px;
+#commVotes img:hover {
+  transform: scale(1.5);
 }
+
 .delete {
-  font-size: small;
-  grid-area: delete;
-  color: #000000;
-  text-align: left;
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-}
-.delete p {
-  color: #000000;
-  font-size: small;
-  padding-right: 10px;
+  align-items: middle;
   font-weight: bold;
+  grid-area: delete;
+  color: rgb(255, 79, 9);
+  text-align: center;
 }
-.delete p:hover {
+
+.delete:hover {
   color: #960707;
 }
+.delete button {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 1px;
+  width: 120px;
+  font-weight: bold;
+  font-size: small;
+  background-color: rgb(34, 33, 33);
+  color: rgb(255, 79, 9);
+  box-shadow: 0px 5px 26px 5px #000000;
+  border: 1px rgb(255, 79, 9)solid;
+  border-radius: 2px;
+  padding:8px;
+}
+@media only screen and (min-width: 1300px) {
+  .delete button {
+    font-size: 110%;
+  }
+}
 
-/* 🙂 ------------------------------- USER SECTION ---------------------------------------- 🙂*/
+/* 🙂 ------------------------------- USER SECTION ----------------------------------- 🙂*/
 .userSection {
-  color: rgb(5, 5, 5);
+  color: white;
   width: 100%;
+  margin: 20px auto;
+  min-width: 300px;
+  max-width: 500px;
   align-content: center;
-  justify-items: stretch;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border-radius: 20px;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto;
   grid-template-areas:
-  "avatar info"
+  "back"
+  "userProfile";
 }
 
-.avatar {
-  grid-area: avatar;
-  padding: 20px;
-  text-align: right;
+.back {
+  padding-left: 10px; 
+  grid-area: back;
+  text-align: left;
 }
-.avatar img {
+.back img {
+  height: 10px;
+}
+.userProfile {
+  grid-area: userProfile;
+  padding: 5px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 150px minmax(250px 500px);
+  grid-template-areas:
+  "avatar info";
+}
+.userProfile img {
+  grid-area: avatar;
   width: 100px;
   height: 100px;
   border: none;
+  margin-right: 5px;
   border-radius: 50%;
 }
 
-.info {
+.user {
   grid-area: info;
-  padding: 20px;
+  color: white;
+  padding: 5px;
   text-align: left;
+  padding: 5px;
 }
 
 
 /* -🙂 🙋 🙉 💟 🙂 🙋 🙉 💟 -------------WIDE SCREEN-----------🙂 🙋 🙉 💟 🙂 🙋 🙉 💟 🙂 🙋 🙉 💟  */
-
-@media only screen and (min-width: 800px) {
-  .login {
-    text-align: center;
-    grid-area: sortBy;
-    height: 300px;
-  }
-  .userOptions {
-      height: 50px;
-      width: 160px;
-      border-radius: 50px;
-      padding: 10px;
-      margin: 2px;
-      background-color: #000000;
-      color: white;
-      justify-items: center;
-      align-items: center;
-      border: none;
-      font-weight: bold;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-align: center;
-  }
-  .userOptions:hover {
-    background-color: #31312d;
-  }
-  .login button {
-    background-color: #000000;
-    color: white;
-    border: none;
-    font-weight: bold;
-    border-radius: 50px;
-    height: 50px;
-    width: 160px;
-    padding:10px;
-    margin: 2px;
-  }
-  .login button:hover {
-    background-color: #31312d;
-  }
-  
-  /* 🙂 -------------------------------USER CORNER----------------------------------- 🙂*/
-  
-  .userCorner {
-    grid-area: userCorner;
-    background-color: #cfa74f;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-content: space-around;
-    align-items: center;
-    font-size: small;
-    color: white;
-    padding-right: 10px;
-    font-weight: bold;
-  }
-  .userLink {
-    color: rgb(43, 95, 86);
-    text-decoration: none;
-  }
-  .userLink:hover {
-    color: rgb(2, 8, 7);
-    text-decoration: none;
-  }
-  .userLink:active {
-    color: rgb(43, 95, 86);
-    text-decoration: none;
-  }
-  .userCorner img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-  }
-  .userCorner button {
-    font-weight: bold;
-    width: 80px;
-    border: none;
-    border-radius: 40px;
-    padding:8px;
-  }
-  /* 🙂 ------------------------------HEADER----------------------------------- 🙂*/
-  header {
-    grid-area: title;
-    width: 100%;
-    height: 300px;
-    background-color: #cfa74f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Benne', serif;
-    font-size: large;
-    font-weight: normal;
-  }
-  .title-link h1{
-    text-align: center;
-  }
-  .title-link img {
-    width: 170px;
-    height: 170px;
-  }
-  .title-link {
-    color: rgb(43, 95, 86);
-    text-decoration: none;
-  }
-  .title-link:hover {
-    color: rgb(2, 8, 7);
-    text-decoration: none;
-  }
-  .title-link:active {
-    color: rgb(43, 95, 86);
-    text-decoration: none;
-  }
-  
-  /* 🙂 ------------------------------N-A-V----------------------------------- 🙂*/
-  .nav {
-    grid-area: nav;
-    background-color: #cfa74f;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .nav select {
-    height: 60px;
-    min-width: 300px;
-    border-radius: 30px;
-    padding: 8px;
-    background-color: #ad9c3c;
-    border: none;
-    font-weight: bold;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-  .nav select:hover {
-    background-color: rgb(184, 219, 216);
-  }
-  
-  /* 🙂 ------------------------------ABOUT----------------------------------- 🙂*/
-  .about {
-    grid-area: about;
-    width: 100%;
-    padding:0px;
-    background-color: #dbdddf;
-    justify-items: center;
-    font-family: 'Benne', serif;
-    display: grid;
-    grid-template-rows: min-content min-content;
-    grid-template-areas:
-    "subtitle"
-    "description";
-  }
-  .about h2 {
-    grid-area: subtitle;
-    font-family: 'Benne', serif;
-    padding:0 5px 0 5px;
-  }
-  .about p {
-    grid-area: description;
-    padding:0 10px 0 10px;
-  }
-  
-  /* 🙂 ------------------------------SORT BY----------------------------------- 🙂*/
-  .sortBy {
-    grid-area: sortBy;
-    width: 100%;
-    background-color: #dbdddf;
-  }
-  .sortBy select {
-    text-align: center;
-    padding:10px;
-    font-size: small;
-    border-radius: 20px;
-    border:none;
-    background-color: #a7ad6a;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 2px;
-    margin-right: 2px;
-    font-weight: bold;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-  .sortBy select:hover {
-    background-color: rgb(184, 219, 216);
-  }
-  .sortByOptions {
-    width: 80px;
-  }
-  .orderOptions {
-    width: 80px;
-  }
-  .itemsPerPage{
-    width: 120px;
-  }
-  
-  /* 🙂 ---------------------------- --REVIEW DISPLAY--------------------------------- 🙂*/
-  .display {
-    background-color: #dbdddf;
-    width: 100%;
-    justify-items: center;
-    grid-area: display;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #loading {
-    width: 200px;
-    height: 200px;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* 🙂 ------------------------------REVIEW REVIEWCARD----------------------------------- 🙂*/
-  .reviewCard {
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 5px;
-    height: 300px;
-    font-size: small;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 20px 330px;
-    grid-template-rows:15px 60px 70px 130px 25px;
-    grid-template-areas:
-    "postedBy postedBy"
-    "vote revTitle"
-    "vote revImg"
-    "vote revBody"
-    "vote comms";
-  }
-  
-  #postedBy {
-    grid-area: postedBy;
-    text-align: left;
-    align-items: center;
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    background-color: #6ca5a5;
-    color: rgb(19, 19, 19);
-    font-size: small;
-  }
-  postedBy p {
-    padding-left: 5px;
-  }
-  
-  #vote {
-    align-content: center;
-    text-align: center;
-    justify-items: start;
-    align-items: start;
-    background-color: #ffffff;
-    border-radius: 0 0 0 5px;
-    grid-area: vote;
-  }
-  
-  
-  #vote img {
-    width: 15px;
-  }
-  #vote img:hover {
-    transform: scale(1.5);
-  }
-  
-  #revTitle {
-    font-size: small;
-    padding-left: 5px;
-    grid-area: revTitle;
-    font-weight: bold;
-    text-align: left;
-    justify-items: start
-  }
-  
-  .singleReview {
-    grid-area: display;
-  
-    background-color: #dbdddf;
-  }
-  .singleReviewLink {
-    font-weight: bold;
-    color: rgb(78, 172, 167);
-    text-decoration: none;
-  }
-  .singleReviewLink:hover {
-    color: rgb(129, 209, 196);
-    text-decoration: none;
-  }
-  .singleReviewLink:active {
-    color: rgb(78, 172, 167);
-    text-decoration: none;
-  }
-  #revBody {
-    height: 100px;
-    grid-area: revBody;
-    text-align: left;
-    padding: 10px;
-    overflow-y: scroll;
-  }
-  #revImg {
-    grid-area: revImg;
-    padding: 5px;
-  }
-  #revImg img {
-    border-radius: 5px;
-    object-fit: cover;
-    height: 70px;
-  }
-  #comms {
-    background-color: #ffffff;
-    grid-area: comms;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    padding-left: 5px;
-  }
-  
-  /* 🙂 ---------------------------------- FORM ------------------------------------------- 🙂*/
-  
-  .commentForm {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 100%;
-    grid-template-rows: min-content min-content 50px;
-    grid-template-areas:
-    "label"
-    "input"
-    "submit";
-  } 
-  .commentForm label {
-    grid-area: label;
-  }
-  .commentForm input {
-    grid-area: input;
-    background-color: #ffffff;
-    width: 330px;
-    height: 80px;
-    border: none;
-    padding: 10px;
-    justify-content: flex-start;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  #button {
-    grid-area: submit;
-    text-align: center;
-    font-weight: bold;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 120px;
-    border-radius: 20px;
-    background-color: #b3b31c;
-    border: none;
-    color: #000000;
-  }
-  
-  /* 🙂 ---------------------------------- COMMENT CARD ------------------------------------------- 🙂*/
-  .commentCard {
-    margin: 20px auto;
-    border-radius: 5px;
-    justify-content: center;
-    font-size: small;
-    align-items: start;
-    background-color: #cac7c2;
-    display: grid;
-    grid-template-columns: 50px 100px 200px;
-    grid-template-rows: 50px auto 50px;
-    grid-template-areas:
-    "avatar author author"
-    "commBody commBody commBody"
-    "commVotes commVotes delete";
-  }
-  #author {
-    grid-area: author;
-    font-size: small;
-    border-radius: 0 5px 0 0;
-    background-color: #a8793b;
-    color: rgb(0, 0, 0);
-    text-align: left;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-  }
-  #avatar {
-    border-radius: 5px 0 0 0;
-    background-color: #a8793b;
-    grid-area: avatar;
-    padding: 5px;
-  }
-  #avatar img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-  }
-  
-  #commBody {
-    font-size: small;
-    grid-area: commBody;
-    text-align: left;
-    height: 100px;
-    padding-left:10px;
-    padding-right:10px;
-    color: rgb(0, 0, 0);
-  }
-  #commVotes {
-    align-items: center;
-    font-size: small;
-    border-radius: 0 0 0 5px;
-    grid-area: commVotes;
-    text-align: center;
-    padding-left: 10px;
-    display: flex;
-    color: rgb(0, 0, 0);
-  }
-  #commVotes img {
-    background-color: #cac7c2;
-    text-align: center;
-    font-weight: bold;
-    border: none;
-  }
-  #commVotes img {
-    background-color: #cac7c2;
-    max-width: 20px;
-  }
-  .delete {
-    font-size: small;
-    grid-area: delete;
-    color: #000000;
-    text-align: left;
-    align-items: stretch;
-    display: flex;
-    flex-direction: row;
-  }
-  .delete p {
-    color: #000000;
-    font-size: small;
-    padding-right: 10px;
-    font-weight: bold;
-  }
-  .delete p:hover {
-    color: #960707;
-  }
-  
-  /* 🙂 ------------------------------- USER SECTION ---------------------------------------- 🙂*/
-  .userSection {
-    color: rgb(5, 5, 5);
-    width: 100%;
-    align-content: center;
-    justify-items: stretch;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-areas:
-    "avatar info"
-  }
-  
-  .avatar {
-    grid-area: avatar;
-    padding: 20px;
-    text-align: right;
-  }
-  .avatar img {
-    width: 100px;
-    height: 100px;
-    border: none;
-    border-radius: 50%;
-  }
-  
-  .info {
-    grid-area: info;
-    padding: 20px;
-    text-align: left;
-  }
-}

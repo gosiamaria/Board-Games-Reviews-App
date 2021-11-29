@@ -3,6 +3,8 @@ import { getAllReviews } from "../../utils/api";
 import { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import arrowLeft from "../images/arrowLeft.png";
 
 export default function Reviews() {
   const { slug } = useParams();
@@ -65,7 +67,9 @@ export default function Reviews() {
     return <p><img id="loading" src="https://www.providentinsurance.co.uk/Static/images/loader.gif" alt="loading"/></p>
   }
   if(err) return <p>{err}</p>;
-  
+
+  console.log(reviews.length, ' length of reviews')
+
   return (
     <section className="main">
       <About slug={slug} />
@@ -92,7 +96,7 @@ export default function Reviews() {
             disabled
             selected
           >
-            Order
+            Order by
           </option>
           <option key="asc" value="asc">Ascending</option>
           <option key="desc" value="desc">Descending</option>
@@ -120,10 +124,13 @@ export default function Reviews() {
 
       </div>
         <div className="display">
+            {(slug) ?  <span className="backNow"><Link to="/" className="goBackLink">
+            <img src={arrowLeft} alt="back arrow" /> Back to all reviews</Link></span> : <span></span>}
           {reviews.map((review) => {
             return <ReviewCard review={review} />
           })}
-        </div>
+          </div>
+          {/* {reviews.length > query.limit} */}
     </section>
     )
 }

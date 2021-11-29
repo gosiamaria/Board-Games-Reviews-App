@@ -9,31 +9,33 @@ export default function CommentCard({ comment }) {
     const { currentUser } = useContext(UserContext);
     const [deleteConfirmation, setDeleteConfirmation ] = useState("")
 
-    const handleDelete = (e) => {
-        e.preventDefault();
-        return deleteComment(comment.comment_id).then(() => {
-            setDeleteConfirmation("Your comment has been deleted. You'll see it gone when you refresh the page.")
-        })
-    }
+    // const handleDelete = (e) => {
+    //     e.preventDefault();
+    //     deleteComment(comment.comment_id).then(() => {
+    //         setDeleteConfirmation("Your comment has been deleted. Promise it ain't gonna be there when you refresh the page.");
+    //         setComments((prevComments) => {
+    //             let newComments = [...prevComments];
+    //             return newComments.filter(com => com.comment_id !== comment.comment_id);
+    //         })
+    //     })
+    // }
 
     return (
         <section className="commentCard">
-            <div id="avatar">
-                <GetAvatar username={comment.author} />
-            </div>
             <div id="author">
-            <p>Posted by: <Link to={`/users/${comment.author}`} className="userLink">{comment.author} </Link> {' '}• {' '} {comment.created_at.slice(0, 10)}{' '} {' '} at{' '} {comment.created_at.slice(11, 16)}</p>
+            <GetAvatar username={comment.author} />
+            <span>posted by <Link to={`/users/${comment.author}`} className="userLink">{comment.author} </Link> {' '}• {' '} {comment.created_at.slice(0, 10)}{' '} {' '} at{' '} {comment.created_at.slice(11, 16)}</span>
             </div>
             <div id="commBody">
-                <p>{comment.body}</p>
+                <span>{comment.body}</span>
             </div>
             <div id="commVotes">
                 <AddVotesComments votes={comment.votes} comment_id={comment.comment_id} />
             </div>
-            <div className="delete">
-            {comment.author === currentUser.username ? <p onClick={handleDelete}>Delete</p> : <p></p>}
-            <p>{deleteConfirmation}</p>
+            {/* <div className="delete">
+            {comment.author === currentUser.username ? <span onClick={handleDelete}>Delete</span> : <span></span>}
             </div>
+            <span>{deleteConfirmation}</span> */}
         </section>
     )
 }

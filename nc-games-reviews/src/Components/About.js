@@ -13,10 +13,10 @@ export default function About({slug}) {
   if(slug) {
     return (
       <div className="about">
-        <h2>{slug.toUpperCase()}</h2>
+        <h2>{slug}</h2>
         {cats.map((cat) => {
         if(slug === cat.slug) {
-          return <p>{cat.description}</p>
+          return <span>{cat.description}</span>
         }
         return [];
       })}
@@ -26,7 +26,7 @@ export default function About({slug}) {
 
   return (
     <div className="about">
-      <h4>The #1 source for news, information, and discussion about modern board games and board game culture. Join our community! Come discuss games like Codenames, Arkham Horror, Terra Mystica, and all your other favorite games!</h4>
+      <h4>The #1 source for news, information, and discussion about modern board games and board game culture. Join our community! Come discuss games like Codenames, Arkham Horror, Terra Mystica, and all your other favorites!</h4>
     </div>
   )
 }

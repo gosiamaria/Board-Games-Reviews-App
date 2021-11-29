@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUserByUsername } from "../../utils/api";
+import { Link } from "react-router-dom";
+import arrowLeft from "../images/arrowLeft.png";
 
 export default function UserPage(props) {
     const { username } = useParams();
@@ -33,12 +35,15 @@ export default function UserPage(props) {
 
     return (
         <div className="userSection">
-            <div className="info">
-                <h4>Username: {user.username}</h4>
-                <h4>Name: {user.name}</h4>
-            </div>
-            <div className="avatar">
+            <span className="back"><Link to="/" className="goBackLink">
+            <img src={arrowLeft} alt="back arrow" /> Back to all reviews</Link></span>
+            <div className="userProfile">
                 <img src={user.avatar_url} alt={user.username} />
+                <div className="user">
+                <h5>Username: {user.username}</h5>
+                <h5>Name: {user.name}</h5>
+                </div>
+                
             </div>
         </div>
     )

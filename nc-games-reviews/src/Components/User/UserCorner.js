@@ -7,7 +7,7 @@ export default function UserCorner() {
   return (
     <div className="userCorner">
       <Link to={`/users/${currentUser.username}`} className="userLink">
-    <p> {currentUser.username}</p>  </Link>
+    <span> {currentUser.username}</span>  </Link>
     <Link to={`/users/${currentUser.username}`}><img src={currentUser.avatar_url} alt={currentUser.username} />
     </Link>
     <button onClick={() => setCurrentUser({})}>Logout</button>

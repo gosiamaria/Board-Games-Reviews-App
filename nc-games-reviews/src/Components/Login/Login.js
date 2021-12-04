@@ -25,22 +25,21 @@ export default function Login() {
                 <select className="userOptions" onChange={(e) => {
                     setUsername(e.target.value)
                 }}>
-                <option
-                key="user-selector"
-                value="user-selector"
-                defaultValue="Select user"
-                disabled
-                selected
-                >
-                select user
-                </option>
-                {users.map((user) => {
-                return (
-                    <option key={user.username} value={user.username}>
-                    {user.username}
+                    <option
+                    key="user-selector"
+                    value="user-selector"
+                    defaultValue="Select user"
+                    disabled
+                    selected
+                    >
+                    select user
                     </option>
-                );
-                })}
+                    <option
+                    key="jessjelly"
+                    value="jessjelly"
+                    >
+                    jessjelly
+                    </option>
                 </select>
                 </label>
                 <button>login</button>

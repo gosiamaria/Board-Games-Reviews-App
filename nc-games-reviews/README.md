@@ -18,6 +18,14 @@ The user can also select a category to view reviews only for that specific categ
 
 In order to leave and/or delete comments, the user needs to be logged in and is only able to delete their own comments.
 
+---
+## MINIMUM SETUP REQUIREMENTS
+
+Please make sure you have the following installed in order to use this API:
+
+- **Node.js v16.9.1** - Instructions on how to intall [here](https://nodejs.dev/learn/how-to-install-nodejs)
+
+---
 
 ## Instructions
 

@@ -1,15 +1,8 @@
 import AddVotesComments from "./AddVotesComments"
 import GetAvatar from "./GetAvatar";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
-import { useContext, useState } from "react";
-import { deleteComment } from '../../utils/api';
 
 export default function CommentCard({ comment }) {
-    const { currentUser } = useContext(UserContext);
-    const [deleteConfirmation, setDeleteConfirmation ] = useState("")
-
-
     return (
         <section className="commentCard">
             <div id="author">

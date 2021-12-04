@@ -28,8 +28,12 @@ export default function Comments({review_id}){
     }
 
     const handleSubmit = (e) => {
+        setIsLoading(true);
         e.preventDefault();
         postComment(review_id, currentUser.username, commentToAdd).then((comment) => {
+            setIsLoading(false);
+            setCommentToAdd('');
+            setDeleteConfirmation('');
             setConfirmation('Your comment has been added');
             setComments((prevComments) => {
                 return [comment, ...prevComments];
@@ -38,10 +42,13 @@ export default function Comments({review_id}){
     }
 
     const handleDelete = (e) => {
+        setIsLoading(true);
         e.preventDefault();
         const commentId = e.target.value;
         deleteComment(commentId).then(() => {
-            setDeleteConfirmation("Your comment has been deleted. Promise it ain't gonna be there when you refresh the page.");
+            setIsLoading(false);
+            setConfirmation('');
+            setDeleteConfirmation("Your comment has been deleted");
             setComments((prevComments) => {
                 return prevComments.filter((comment) => {
                     return comment.comment_id != commentId;
@@ -69,6 +76,7 @@ export default function Comments({review_id}){
                 </div>
                 <button id="button" type="submit">Add comment</button>
                 <p>{confirmation}</p>
+                <p>{deleteConfirmation}</p>
                 <p></p>
             </form>
         </div>

@@ -7,7 +7,6 @@ import { UserContext } from "../../context/UserContext";
 export default function AddVotes({ votes, reviewId, reviewOwner }){
     const [addedVotes, setAddedVotes] = useState(0);
     const [isError, setIsError] = useState(false);
-    const [msg, setMsg] = useState('');
     const { currentUser } = useContext(UserContext);
 
     const handleClickInc = () => {
@@ -36,7 +35,6 @@ export default function AddVotes({ votes, reviewId, reviewOwner }){
             </>     
         }
         {isError ? <p>Oops, something went wrong.</p> : null}
-        <div id="msg">{msg}</div>
         </>
     );
 }

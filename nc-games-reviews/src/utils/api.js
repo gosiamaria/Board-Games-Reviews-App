@@ -57,9 +57,7 @@ export const postComment = (review_id, username, comment) => {
 }
 
 export const deleteComment = (comment_id) => {
-    return reviewsApi.delete(`/comments/${comment_id}`).then(() => {
-        console.log('Deleted')
-    })
+    return reviewsApi.delete(`/comments/${comment_id}`)
 }
 
 export const patchVotesComments = (comment_id, inc) => {
